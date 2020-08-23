@@ -4,9 +4,7 @@
 	"description": "All WNBA scores ever",
 	"main": "js/server.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "node js/Node/server.js",
-		"setup": "node js/Node/copyDB_PG.js & git update-index --assume-unchanged js/Node/dbVars.js"
+		"start": "node js/Node/server.js"
 	},
 	"author": "Andrew Merriman",
 	"license": "MIT",
