@@ -502,7 +502,7 @@ function toggleGradient(on)
 			/* falls through */
 		case MODE_LAST_GAME:
 			max = new Date().getFullYear();
-			min = 1920;
+			min = 1997;
 			break;
 		case MODE_COUNT:
 			/* falls through */
