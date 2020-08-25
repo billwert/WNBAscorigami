@@ -128,7 +128,7 @@ function render()
 				else
 				{
 					//coloring black squares
-					if(j < i)
+					if(j <= i)
 					{
 						htmlString += "<td class='black'></td>";
 					}
@@ -685,7 +685,7 @@ function onClick(i, j)
 			htmlString += "<span id=infoBoxScore>Score: " + j + "-" + i + "</span> ";
 			if(data.count > 1)
 			{
-				htmlString += "(<a href='https://www.pro-football-reference.com/boxscores/game_scores_find.cgi?pts_win=" + j + "&pts_lose=" + i +"'>view all " + data.count + " games</a>)";
+				htmlString += data.count + " games";
 			}
 			
 			htmlString += "<span id='infoBoxClose' onclick='closeInfoBox()'>(<u>close</u>)</span>";
