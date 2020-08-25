@@ -128,7 +128,7 @@ function render()
 				else
 				{
 					//coloring black squares
-					if(j < i - 1)
+					if(j < i)
 					{
 						htmlString += "<td class='black'></td>";
 					}
@@ -151,41 +151,7 @@ function render()
 					//fill in empty squares
 					else
 					{
-						//color black squares for impossible scores along 1 point line
-						//NOTE: we can do this after coloring in the green squares since these squares will never be green
-						if( i === 1)
-						{
-							switch (j)
-							{
-								case 1:
-									/* falls through */
-								case 2: 
-									/* falls through */
-								case 3: 
-									/* falls through */
-								case 4:
-									/* falls through */
-								case 5:
-									/* falls through */
-								case 7: 
-									htmlString += "<td class='black'></td>";
-									break;
-								default:
-									htmlString += "<td id='cell_" + i + "-" + j + "' class='blank'><div id='hover_" + i + "-" + j + "' class='hover'></div></td>";
-									break;
-									
-							}
-						}
-						//color 0,1 square black since that is also impossible
-						//NOTE: we can do this after coloring in the green squares since this square will never be green
-						else if (i === 0 && j === 1)
-						{
-							htmlString += "<td class='black'></td>";
-						}
-						else
-						{
-							htmlString += "<td id='cell_" + i + "-" + j + "' class='blank'><div id='hover_" + i + "-" + j + "' class='hover'></div></td>";
-						}
+						htmlString += "<td id='cell_" + i + "-" + j + "' class='blank'><div id='hover_" + i + "-" + j + "' class='hover'></div></td>";
 					}
 				}
 			}
