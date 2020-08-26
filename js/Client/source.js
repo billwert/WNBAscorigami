@@ -122,7 +122,7 @@ function render()
 				}
 				else
 				{
-					htmlString += "<th style=\"color:white\" id='colHeader_" + j + "'>" + j + "</th>";
+					htmlString += "<th class='headerhidden' id='colHeader_" + j + "'>" + j + "</th>";
 				}
 			}
 		}
@@ -152,7 +152,7 @@ function render()
 						}
 						else
 						{
-							htmlString += "<th style=\"color:white\" id='rowHeader_" + i + "'>" + i + "</th>";
+							htmlString += "<th class='headerhidden' id='rowHeader_" + i + "'>" + i + "</th>";
 						}
 					}
 					//color in green squares
@@ -625,9 +625,20 @@ function mouseOver(i, j)
 		}
 	}
 	var colHeader = document.getElementById("colHeader_" + j);
-	colHeader.classList.add("adjhover");
+	colHeader.classList.add("headerhover");
+	if (j % 5 != 0)
+	{
+		colHeader.classList.remove("headerhidden");
+	}
+
 	var rowHeader = document.getElementById("rowHeader_" + i);
-	rowHeader.classList.add("adjhover");
+	rowHeader.classList.add("headerhover");	
+	var rowHeader = document.getElementById("rowHeader_" + i);
+	if (i % 5 != 0)
+	{
+		rowHeader.classList.remove("headerhidden");
+	}
+
 	var specialHeader2 = document.getElementById("specialHeader_" + (j));
 	if(specialHeader2)
 	{
@@ -663,9 +674,17 @@ function mouseOff(i, j)
 		}
 	}
 	var colHeader = document.getElementById("colHeader_" + j);
-	colHeader.classList.remove("adjhover");
+	colHeader.classList.remove("headerhover");
+	if (j % 5 != 0)
+	{
+		colHeader.classList.add("headerhidden");
+	}
 	var rowHeader = document.getElementById("rowHeader_" + i);
-	rowHeader.classList.remove("adjhover");
+	if (i % 5 != 0)
+	{
+		rowHeader.classList.add("headerhidden");
+	}
+	rowHeader.classList.remove("headerhover");
 	var specialHeader2 = document.getElementById("specialHeader_" + (j));
 	if(specialHeader2)
 	{
