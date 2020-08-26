@@ -104,43 +104,56 @@ function render()
 		htmlString += "<tr><td id='hAxisLabel' class='axisLabel' colspan=" + (g_data.maxpts + 2) + ">Winning Team Score</td>";
 		htmlString += "<td id='vAxisLabel' class='axisLabel' rowspan=" + (g_data.maxpts + 3) + "><div class='vertical'>Losing Team Score</div></td></tr>";
 
-		//cycle through all elements in the table (maxpts will always be the length and width of the matrix)
-		//start at -1 so labels can be added
-		for(var i = -1; i <= g_data.maxpts; i++)
+
+		for (var j = 25; j <=g_data.maxpts+1;j++)
 		{
-			htmlString += "<tr id='row_" + i + "'>";
-			for(var j = 0; j <= g_data.maxpts + 1; j++)
+			var i = -1;
+			//do not label the top right cell, since the left column is all labels
+			if (j > g_data.maxpts)
 			{
-				//if i===-1, we are in the label row
-				if(i === -1)
+				htmlString += "<th></th>";
+			}
+			//adding column lables
+			else 
+			{
+				if (j % 5 === 0)
 				{
-					//do not label the top right cell, since the left column is all labels
-					if (j > g_data.maxpts)
-					{
-						htmlString += "<th></th>";
-					}
-					//adding column lables
-					else 
-					{
-						htmlString += "<th id='colHeader_" + j + "'>" + j + "</th>";
-					}
+					htmlString += "<th id='colHeader_" + j + "'>" + j + "</th>";
 				}
 				else
 				{
+					htmlString += "<th style=\"color:white\" id='colHeader_" + j + "'>" + j + "</th>";
+				}
+			}
+		}
+		//cycle through all elements in the table (maxpts will always be the length and width of the matrix)
+		// TODO replaces this trash with an actual minpts
+		for(var i = 25; i <= g_data.maxpts; i++)
+		{
+			htmlString += "<tr id='row_" + i + "'>";
+			for(var j = 25; j <= g_data.maxpts + 1; j++)
+			{
 					//coloring black squares
-					if(j <= i)
+					if(j < i)
 					{
 						htmlString += "<td class='black'></td>";
 					}
 					//adding row label
-					else if (j === i - 1)
+					else if (j === i)
 					{
 						htmlString += "<th id='specialHeader_" + i + "' class='black'></th>";
 					}
 					//adding row label
 					else if (j === g_data.maxpts + 1)
 					{
-						htmlString += "<th id='rowHeader_" + i + "'>" + i + "</th>";
+						if (i % 5 === 0)
+						{
+							htmlString += "<th id='rowHeader_" + i + "'>" + i + "</th>";
+						}
+						else
+						{
+							htmlString += "<th style=\"color:white\" id='rowHeader_" + i + "'>" + i + "</th>";
+						}
 					}
 					//color in green squares
 					else if (matrix[i][j].count > 0)
@@ -153,8 +166,8 @@ function render()
 					{
 						htmlString += "<td id='cell_" + i + "-" + j + "' class='blank'><div id='hover_" + i + "-" + j + "' class='hover'></div></td>";
 					}
+
 				}
-			}
 			htmlString += "</tr>";
 		}
 		table.innerHTML = htmlString;
@@ -615,7 +628,7 @@ function mouseOver(i, j)
 	colHeader.classList.add("adjhover");
 	var rowHeader = document.getElementById("rowHeader_" + i);
 	rowHeader.classList.add("adjhover");
-	var specialHeader2 = document.getElementById("specialHeader_" + (j + 1));
+	var specialHeader2 = document.getElementById("specialHeader_" + (j));
 	if(specialHeader2)
 	{
 		specialHeader2.innerHTML = j;
@@ -653,7 +666,7 @@ function mouseOff(i, j)
 	colHeader.classList.remove("adjhover");
 	var rowHeader = document.getElementById("rowHeader_" + i);
 	rowHeader.classList.remove("adjhover");
-	var specialHeader2 = document.getElementById("specialHeader_" + (j + 1));
+	var specialHeader2 = document.getElementById("specialHeader_" + (j));
 	if(specialHeader2)
 	{
 		specialHeader2.innerHTML = "";
