@@ -3,12 +3,12 @@ body{
 }
 
 .black {
-	background-color: black;
+	background-color: #CCCCCC;
 	color: white;
 }
 
 .green{
-	background-color: green;
+	background-color: #FA4D01;
 	color: white;
 	text-align: center;
 	cursor: pointer;
