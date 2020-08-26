@@ -726,7 +726,9 @@ function onClick(i, j)
 			}
 			htmlString += " " + i + " " + data.first_team_lose + " | ";
 			htmlString += firstDate + " ";
-			htmlString += "(<a href='" + data.first_link + "'>boxscore</a>)<br/>";
+			// TODO add back box score links when the data is there
+			//htmlString += "(<a href='" + data.first_link + "'>boxscore</a>)";"
+			htmlString += "<br/>";
 			
 			if(data.count > 1)
 			{
@@ -752,7 +754,7 @@ function onClick(i, j)
 				}
 				htmlString += " " + i + " " + data.last_team_lose + " | ";
 				htmlString += lastDate + " ";
-				htmlString += "(<a href='" + data.last_link + "'>boxscore</a>)<br/>";
+				//htmlString += "(<a href='" + data.last_link + "'>boxscore</a>)<br/>";
 			}
 			infoBox.innerHTML = htmlString;
 			infoBox.classList.remove("hidden");
