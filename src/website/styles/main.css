@@ -1,0 +1,15 @@
+* {
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.viz {
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    background:#f5f5f5;;
+}
+
+.emphasize {
+    color: #FA4D01;
+}
