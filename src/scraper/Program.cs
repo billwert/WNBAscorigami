@@ -316,39 +316,29 @@ namespace WNBA_Scorigami
 
     class WnbaGame
     {
-        DateTime gameDate = DateTime.MinValue;
-        private string team1 = "";
-        private string team2 = "";
-        private int team1Score;
-        private int team2Score;
-        private string boxScoreURL;
-        private bool _isPlayoffGame;
-        public DateTime GameDate { get => gameDate; set => gameDate = value; }
-        public string Team1 { get => team1; set => team1 = value; }
-        public string Team2 { get => team2; set => team2 = value; }
-        public int Team1Score { get => team1Score; set => team1Score = value; }
-        public int Team2Score { get => team2Score; set => team2Score = value; }
-        public string BoxScoreURL { get => boxScoreURL; set => boxScoreURL = value; }
-        public bool IsPlayoffGame { get => _isPlayoffGame; set => _isPlayoffGame = value; }
+        public DateTime GameDate { get; set; } = DateTime.MinValue;
+        public List<string> Players {get; } = new List<string>();
+        public string Team1 { get; set; }
+        public string Team2 { get; set; }
+        public int Team1Score { get; set; }
+        public int Team2Score { get; set; }
+        public string BoxScoreURL { get; set; }
+        public bool IsPlayoffGame { get; set; }
     }
 
     class WnbaTeam
     {
-        private string teamName;
-        private string teamShortName;
-        private bool isActive;
-        private string altShortNames;
-        public string TeamName { get => teamName; }
-        public string TeamShortName { get => teamShortName; }
-        public bool IsActive { get => isActive; }
-        public string AltShortNames { get => altShortNames; }
+        public string TeamName { get; }
+        public string TeamShortName { get; }
+        public bool IsActive {get; }
+        public string AltShortNames { get; }
 
         public WnbaTeam(string name, string shortname, bool active, string altShort = "")
         {
-            teamName = name;
-            teamShortName = shortname;
-            isActive = active;
-            altShortNames = altShort;
+            TeamName = name;
+            TeamShortName = shortname;
+            IsActive = active;
+            AltShortNames = altShort;
         }
     }
 
@@ -358,7 +348,7 @@ namespace WNBA_Scorigami
         private static List<string> activePlayers = null;
         public  const string DATA_DIRECTORY = @"datacache";
 
-        private static List<WnbaTeam> teams = new List<WnbaTeam>()
+        public static List<WnbaTeam> Teams {get; } = new List<WnbaTeam>()
         {
             new WnbaTeam("Atlanta Dream", "ATL",true),
             new WnbaTeam("Chicago Sky","CHI",true),
@@ -422,7 +412,7 @@ namespace WNBA_Scorigami
 
         public static string GetShortName(string teamName, DateTime gameDate)
         {
-            foreach (var team in teams)
+            foreach (var team in Teams)
             {
                 if (team.TeamName == teamName)
                 {
@@ -437,6 +427,5 @@ namespace WNBA_Scorigami
             throw new ArgumentException("Teamname {0} is not found in league list", teamName);
         }
 
-        internal static List<WnbaTeam> Teams { get => teams;}
     }
 }
