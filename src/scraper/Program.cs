@@ -2,6 +2,7 @@ using HtmlAgilityPack;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 
@@ -16,9 +17,13 @@ namespace WNBA_Scorigami
 
         static void Main(string[] args)
         {
+            Stopwatch sw = Stopwatch.StartNew();
             LoadGameData();
+            Console.WriteLine("LoadGameData duration: " + sw.Elapsed.TotalSeconds);
             CalculateScorigamis();
+            Console.WriteLine("CalculateScorigamis duration: " + sw.Elapsed.TotalSeconds);
             CalculateScorigamiByActivePlayer();
+            Console.WriteLine("CalculateScorigamiByActivePlayer duration: " + sw.Elapsed.TotalSeconds);
         }
 
         private static void CalculateScorigamiByActivePlayer()
