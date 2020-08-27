@@ -1,4 +1,4 @@
-﻿using HtmlAgilityPack;
+using HtmlAgilityPack;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -50,7 +50,7 @@ namespace WNBA_Scorigami
                 }
             }
 
-            using (var sw = new StreamWriter(LeagueInfo.DATA_DIRECTORY + @"\output_playerScorigamis.txt"))
+            using (var sw = new StreamWriter(Path.Join(LeagueInfo.DATA_DIRECTORY, @"output_playerScorigamis.txt")))
             {
                 foreach (var kvp in scorigamiPerPlayer)
                 {
@@ -68,7 +68,11 @@ namespace WNBA_Scorigami
             // For the current year we always pull from bbref as there may be new games to add.
             for (int i = LeagueInfo.START_YEAR; i <= DateTime.Now.Year; i++)
             {
-                string gameFilePath = LeagueInfo.DATA_DIRECTORY + "\\" + i + "_games.json";
+                if(!File.Exists(LeagueInfo.DATA_DIRECTORY))
+                {
+                    Directory.CreateDirectory(LeagueInfo.DATA_DIRECTORY);
+                }
+                string gameFilePath = Path.Join(LeagueInfo.DATA_DIRECTORY, i + "_games.json");
 
                 if (File.Exists(gameFilePath) && i != DateTime.Now.Year)
                 {
@@ -391,7 +395,7 @@ namespace WNBA_Scorigami
                 return activePlayers;
 
             activePlayers = new List<string>();
-            foreach (var line in File.ReadAllLines(DATA_DIRECTORY + @"\activePlayerList.txt"))
+            foreach (var line in File.ReadAllLines(Path.Join(DATA_DIRECTORY, @"activePlayerList.txt")))
             {
                 activePlayers.Add(line);
             }
