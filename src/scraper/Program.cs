@@ -4,27 +4,43 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 
 namespace WNBA_Scorigami
 {
     class Program
     {
-        private static WnbaGame[,] Scorigamis = new WnbaGame[150, 150];
-        private static int[,] GameFinishCount = new int[150, 150];
+        private static Scorigami[,] Scorigamis = new Scorigami[150,150];
         private static List<WnbaGame> allGames = new List<WnbaGame>(5000);
         private static Dictionary<string, int> scorigamiByTeam = new Dictionary<string, int>();
+        private static HashSet<int> updatedYears = new HashSet<int>();
 
         static void Main(string[] args)
         {
             Stopwatch sw = Stopwatch.StartNew();
+            var timings = new Dictionary<string, double>();
+            void reset(string name)
+            {
+                timings.Add(name, sw.Elapsed.TotalSeconds);
+                sw.Restart();
+            }
             LoadGameData();
-            Console.WriteLine("LoadGameData duration: " + sw.Elapsed.TotalSeconds);
+            reset("LoadGameData duration");
             CalculateScorigamis();
-            Console.WriteLine("CalculateScorigamis duration: " + sw.Elapsed.TotalSeconds);
+            reset("CalculateScorigamis duration");
+            SaveGameData();
+            reset("SaveGameData duration");
+            TabulateTeamScorigamiCount(@"output_teamscorigamicount.txt");
+            reset("TabulateTeamScorigamiCount duration");
             CalculateScorigamiByActivePlayer();
-            Console.WriteLine("CalculateScorigamiByActivePlayer duration: " + sw.Elapsed.TotalSeconds);
+            reset("CalculateScorigamiByActivePlayer duration");
+            foreach(var kvp in timings)
+            {
+                Console.WriteLine($"{kvp.Key} duration: {kvp.Value}");
+            }
         }
+
 
         private static void CalculateScorigamiByActivePlayer()
         {
@@ -34,21 +50,20 @@ namespace WNBA_Scorigami
                 scorigamiPerPlayer.Add(player, 0);
             }
             
-
             for(int i = 0; i < 150; i++)
             {
                 for (int j = 0; j < 150; j++)
                 {
-                    var game = Scorigamis[i, j];
+                    var game = Scorigamis[i, j]?.First;
                     if (game == null)
                         continue;
 
-                    var web = new HtmlWeb();
-                    var boxScoreDoc = web.Load(game.BoxScoreURL);                    
-                    foreach (var player in GetPlayersForGame(boxScoreDoc))
+                     
+                    foreach (var player in game.Players)
                     {
                         if (scorigamiPerPlayer.ContainsKey(player))
                         {
+
                             scorigamiPerPlayer[player]++;
                         }
                     }
@@ -64,20 +79,34 @@ namespace WNBA_Scorigami
             }
 
         }
+        private static void SaveGameData()
+        {
+            foreach(var year in updatedYears)
+            {
+                SerializeYear(allGames.Where(game => game.Year == year).ToList());
+            }
+        }
 
+        private static void SerializeYear(List<WnbaGame> games)
+        {
+            string json = JsonConvert.SerializeObject(games);
+            File.WriteAllText(GameFilePath(games.First().Year), json);
+        }
+
+        private static string GameFilePath(int year) => Path.Join(LeagueInfo.DATA_DIRECTORY, year + "_games.json");
         private static void LoadGameData()
         {
             var scheduleURLFormat = @"https://www.basketball-reference.com/wnba/years/{0}-schedule.html";
 
             // Add all years of games. We look for a json blob first then pull from bbref.
             // For the current year we always pull from bbref as there may be new games to add.\
-                if(!File.Exists(LeagueInfo.DATA_DIRECTORY))
-                {
-                    Directory.CreateDirectory(LeagueInfo.DATA_DIRECTORY);
-                }
+            if(!File.Exists(LeagueInfo.DATA_DIRECTORY))
+            {
+                Directory.CreateDirectory(LeagueInfo.DATA_DIRECTORY);
+            }
             for (int i = LeagueInfo.START_YEAR; i <= DateTime.Now.Year; i++)
             {
-                string gameFilePath = Path.Join(LeagueInfo.DATA_DIRECTORY, i + "_games.json");
+                string gameFilePath = GameFilePath(i);
 
                 if (File.Exists(gameFilePath) && i != DateTime.Now.Year)
                 {
@@ -90,17 +119,17 @@ namespace WNBA_Scorigami
                     string scheduleURL = String.Format(scheduleURLFormat, i.ToString());
                     List<WnbaGame> seasonOfGames = new List<WnbaGame>();
                     AddGamesFromBBRef(seasonOfGames, scheduleURL);
-                    string json = JsonConvert.SerializeObject(seasonOfGames);
-                    File.WriteAllText(gameFilePath, json);
-
+                    SerializeYear(seasonOfGames);
                     allGames.AddRange(seasonOfGames);
                 }
 
             }
         }
 
-        private static List<string> GetPlayersForGame(HtmlDocument doc)
+        private static List<string> GetPlayersForGame(string boxScoreUrl)
         {
+            var web = new HtmlWeb();
+            var doc = web.Load(boxScoreUrl);                 
             var playerNames = new List<string>();
 
             // "//*[@id=\"box-score-nyl\"]/tbody/tr[1]/th/a"
@@ -123,65 +152,70 @@ namespace WNBA_Scorigami
         }
 
 
-
+        private static void UpdateGame(WnbaGame game, ScorigamiType type)
+        {
+            if(game.ScorigamiType == ScorigamiType.None)
+            {
+                game.ScorigamiType = type;
+                game.Players = GetPlayersForGame(game.BoxScoreURL);
+                updatedYears.Add(game.Year);
+            }
+        }
         private static void CalculateScorigamis()
         {
             foreach (var game in allGames)
             {
-                int higherScore;
-                int lowerScore;
-
-                if (game.Team1Score > game.Team2Score)
+                int higherScore = game.WinScore;
+                int lowerScore = game.LoseScore;
+                if(Scorigamis[higherScore, lowerScore] == null)
                 {
-                    higherScore = game.Team1Score;
-                    lowerScore = game.Team2Score;
+                    Scorigamis[higherScore, lowerScore] = new Scorigami();
                 }
-                else
-                {
-                    higherScore = game.Team2Score;
-                    lowerScore = game.Team1Score;
-                }
+                Scorigamis[higherScore, lowerScore].Count++;
 
-                GameFinishCount[higherScore, lowerScore]++;
+                if (Scorigamis[higherScore, lowerScore].First == null || Scorigamis[higherScore, lowerScore].First.GameDate >= game.GameDate)
+                {
+                    Console.WriteLine("First Game updated for {0},{1}", higherScore, lowerScore);
+                    Console.WriteLine("Was {0}", FormatGame(Scorigamis[higherScore, lowerScore].First));
+                    Console.WriteLine("Now {0}", FormatGame(game));
+                    Scorigamis[higherScore, lowerScore].First = game;
+                    UpdateGame(game, ScorigamiType.First);
 
-                if (Scorigamis[higherScore, lowerScore] == null)
-                {
-                    Scorigamis[higherScore, lowerScore] = game;
                 }
-                else
+                else if(Scorigamis[higherScore, lowerScore].Latest == null || Scorigamis[higherScore, lowerScore].Latest.GameDate >= game.GameDate)
                 {
-                    if (Scorigamis[higherScore, lowerScore].GameDate >= game.GameDate)
-                    {
-                        Console.WriteLine("Game updated for {0},{1}", higherScore, lowerScore);
-                        Console.WriteLine("Was {0}", FormatGame(Scorigamis[higherScore, lowerScore]));
+                    Console.WriteLine("Latest Game updated for {0},{1}", higherScore, lowerScore);
+                    Console.WriteLine("Was {0}", FormatGame(Scorigamis[higherScore, lowerScore].Latest));
                         Console.WriteLine("Now {0}", FormatGame(game));
-                        Scorigamis[higherScore, lowerScore] = game;
+                    Scorigamis[higherScore, lowerScore].Latest = game;
+                    UpdateGame(game, ScorigamiType.Latest);
                     }
                     else
                     {
                         Console.WriteLine("Game is not a Scorigami: {0}", FormatGame(game));
-                        Console.WriteLine("Does not replace: {0}", FormatGame(Scorigamis[higherScore, lowerScore]));
+                    Console.WriteLine("Does not replace:{0}\t{1}{2}\t{3}",Environment.NewLine, 
+                        FormatGame(Scorigamis[higherScore, lowerScore].First), 
+                        Environment.NewLine,
+                        FormatGame(Scorigamis[higherScore, lowerScore].Latest));
                     }
                 }
             }
 
-            TabulateTeamScorigamiCount(@"output_teamscorigamicount.txt");
-        }
-
-        private static void TabulateTeamScorigamiCount(string v)
+        private static void TabulateTeamScorigamiCount(string path)
         {
+            using var list = new StreamWriter("output_list.txt");
             for (int i = 0; i < 150; i++)
             {
                 for (int j = 0; j < 150; j++)
                 {
-                    WnbaGame scoriGame = Scorigamis[i, j];
-
+                    WnbaGame scoriGame = Scorigamis[i, j]?.First;
                     if (scoriGame == null)
                         continue;
+                    list.WriteLine(FormatGame(scoriGame));
 
                     // Some teams have moved and been renamed, their scorigamis stay with the franchise
-                    string modernTeamName1 = LeagueInfo.GetModernTeamName(scoriGame.Team1);
-                    string modernTeamName2 = LeagueInfo.GetModernTeamName(scoriGame.Team2);
+                    string modernTeamName1 = LeagueInfo.GetModernTeamName(scoriGame.Away);
+                    string modernTeamName2 = LeagueInfo.GetModernTeamName(scoriGame.Home);
 
                     if (scorigamiByTeam.ContainsKey(modernTeamName1))
                     {
@@ -203,7 +237,7 @@ namespace WNBA_Scorigami
                 }
             }
 
-            using (StreamWriter sw = new StreamWriter(v))
+            using (StreamWriter sw = new StreamWriter(path))
             {
                 foreach (var team in scorigamiByTeam)
                 {
@@ -214,8 +248,12 @@ namespace WNBA_Scorigami
 
         private static string FormatGame(WnbaGame game)
         {
-            string gameStr = game.Team1 + " v " + game.Team2;
-            string output = String.Format("{0},{1},{2},{3}", game.GameDate.ToString("yyyy-MM-dd"), gameStr, game.Team1Score, game.Team2Score);
+            if(game == null)
+            {
+                return "<empty>";
+            }
+            string gameStr = game.Away + " v " + game.Home;
+            string output = String.Format("{0},{1},{2},{3}", game.GameDate.ToString("yyyy-MM-dd"), gameStr, game.AwayScore, game.HomeScore);
             return output;
         }
 
@@ -242,10 +280,10 @@ namespace WNBA_Scorigami
 
                 WnbaGame game = new WnbaGame();
                 game.GameDate = DateTime.Parse(gameRow.ChildNodes[0].InnerText);
-                game.Team1 = gameRow.ChildNodes[1].InnerText;
-                game.Team1Score = Int32.Parse(gameRow.ChildNodes[2].InnerText);
-                game.Team2 = gameRow.ChildNodes[3].InnerText;
-                game.Team2Score = Int32.Parse(gameRow.ChildNodes[4].InnerText);
+                game.Away = gameRow.ChildNodes[1].InnerText;
+                game.AwayScore = Int32.Parse(gameRow.ChildNodes[2].InnerText);
+                game.Home = gameRow.ChildNodes[3].InnerText;
+                game.HomeScore = Int32.Parse(gameRow.ChildNodes[4].InnerText);
                 game.BoxScoreURL = @"https://www.basketball-reference.com" + gameRow.ChildNodes[5].FirstChild.Attributes[0].Value;
                 game.IsPlayoffGame = playoffGame;
 
@@ -254,16 +292,37 @@ namespace WNBA_Scorigami
         }
     }
 
+    class Scorigami
+    {
+        public WnbaGame First { get; set; }
+        public WnbaGame Latest { get; set; }
+        public int Count { get; set; }
+    }
+
+    enum ScorigamiType
+    {
+        None,
+        First,
+        Latest
+    }
+
     class WnbaGame
     {
+        public ScorigamiType ScorigamiType {get; set; }
+        public int Year { get => GameDate.Year; }
         public DateTime GameDate { get; set; } = DateTime.MinValue;
-        public List<string> Players {get; } = new List<string>();
-        public string Team1 { get; set; }
-        public string Team2 { get; set; }
-        public int Team1Score { get; set; }
-        public int Team2Score { get; set; }
+        public List<string> Players {get; set; }
+        public string Away { get; set; }
+        public string Home { get; set; }
+        public int AwayScore { get; set; }
+        public int HomeScore { get; set; }
         public string BoxScoreURL { get; set; }
         public bool IsPlayoffGame { get; set; }
+        public bool HomeWon { get { return HomeScore > AwayScore; } }
+        public int WinScore { get { return HomeWon ? HomeScore : AwayScore; } }
+        public string WinTeam { get { return HomeWon ? Home : Away; } }
+        public int LoseScore { get { return HomeWon ? AwayScore : HomeScore; } }
+        public string LoseTeam {get { return HomeWon ? Away : Home; } }
     }
 
     class WnbaTeam
