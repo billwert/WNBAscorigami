@@ -70,13 +70,13 @@ namespace WNBA_Scorigami
             var scheduleURLFormat = @"https://www.basketball-reference.com/wnba/years/{0}-schedule.html";
 
             // Add all years of games. We look for a json blob first then pull from bbref.
-            // For the current year we always pull from bbref as there may be new games to add.
-            for (int i = LeagueInfo.START_YEAR; i <= DateTime.Now.Year; i++)
-            {
+            // For the current year we always pull from bbref as there may be new games to add.\
                 if(!File.Exists(LeagueInfo.DATA_DIRECTORY))
                 {
                     Directory.CreateDirectory(LeagueInfo.DATA_DIRECTORY);
                 }
+            for (int i = LeagueInfo.START_YEAR; i <= DateTime.Now.Year; i++)
+            {
                 string gameFilePath = Path.Join(LeagueInfo.DATA_DIRECTORY, i + "_games.json");
 
                 if (File.Exists(gameFilePath) && i != DateTime.Now.Year)
