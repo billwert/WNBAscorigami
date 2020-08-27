@@ -166,9 +166,6 @@ namespace WNBA_Scorigami
             }
 
             TabulateTeamScorigamiCount(@"output_teamscorigamicount.txt");
-            WriteScorigamis(@"output.txt");
-            WriteListOfScorigamis(@"output_list.txt");
-            WriteGameScoreCount(@"output_count.txt");
         }
 
         private static void TabulateTeamScorigamiCount(string v)
@@ -215,73 +212,11 @@ namespace WNBA_Scorigami
             }
         }
 
-        private static void WriteGameScoreCount(string outFilePath)
-        {
-            using (StreamWriter sw = new StreamWriter(outFilePath))
-            {
-                for (int i = 0; i < 150; i++)
-                {
-                    for (int j = 0; j < 150; j++)
-                    {
-                        sw.Write(GameFinishCount[i, j] + ",");
-                    }
-                    sw.Write(Environment.NewLine);
-                }
-            }
-        }
-
-        private static void WriteListOfScorigamis(string outFilePath)
-        {
-            using (StreamWriter sw = new StreamWriter(outFilePath))
-            {
-                for (int i = 0; i < 150; i++)
-                {
-                    for (int j = 0; j < 150; j++)
-                    {
-                        if (Scorigamis[i, j] != null)
-                        {
-                            var game = Scorigamis[i, j];
-                            string output = FormatGame(game);
-
-                            if (game.Team1Score <= game.Team2Score || (game.Team1Score + game.Team2Score) < 60)
-                            {
-                                Console.WriteLine("WARNING: {0}", output);
-                            }
-
-                            sw.WriteLine(output);
-                        }
-                    }
-                }
-            }
-        }
-
         private static string FormatGame(WnbaGame game)
         {
             string gameStr = game.Team1 + " v " + game.Team2;
             string output = String.Format("{0},{1},{2},{3}", game.GameDate.ToString("yyyy-MM-dd"), gameStr, game.Team1Score, game.Team2Score);
             return output;
-        }
-
-        private static void WriteScorigamis(string outFilePath)
-        {
-            using (StreamWriter sw = new StreamWriter(outFilePath))
-            {
-                for (int i = 0; i < 150; i++)
-                {
-                    for (int j = 0; j < 150; j++)
-                    {
-                        if (Scorigamis[i, j] == null)
-                        {
-                            sw.Write("N,");
-                        }
-                        else
-                        {
-                            sw.Write("Y,");
-                        }
-                    }
-                    sw.Write(Environment.NewLine);
-                }
-            }
         }
 
         private static void AddGamesFromBBRef(List<WnbaGame> allGames, string seasonUrl)
