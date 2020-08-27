@@ -46,17 +46,22 @@ async function drawScorigamiViz() {
         
     // 4. Create scales
 
-    const yScale = d3.scaleLinear()
-        .domain([30, d3.max(dataset, yAccessor)])
+    const yScale = d3.scaleBand()
+        .domain(d3.range(30, d3.max(dataset, yAccessor) + 1))
         .range([dimensions.boundedHeight, 0])
+        .paddingInner(0.05)
+        // .nice()
     
-    const xScale = d3.scaleLinear()
-        .domain([30, d3.max(dataset, xAccessor)])
+    const xScale = d3.scaleBand()
+        .domain(d3.range(30, d3.max(dataset, xAccessor)))
         .range([0, dimensions.boundedWidth])
+        .paddingInner(0.05)
+        // .nice()
 
 
     // 5. Draw data
-
+        console.log(xScale.bandWidth())
+    // 5a. Heatmap recs
     bounds.selectAll("rects")
         .data(dataset)
         .join("rect")
@@ -65,7 +70,6 @@ async function drawScorigamiViz() {
         .attr("width", 5)
         .attr("height", 5)
         .attr("fill", "#FA4D01")
-
 
 
 }
