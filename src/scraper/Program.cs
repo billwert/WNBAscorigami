@@ -156,10 +156,10 @@ namespace WNBA_Scorigami
                 }
             }
 
-            TabulateTeamScorigamiCount(LeagueInfo.DATA_DIRECTORY + @"\output_teamscorigamicount.txt");
-            WriteScorigamis(LeagueInfo.DATA_DIRECTORY + @"\output.txt");
-            WriteListOfScorigamis(LeagueInfo.DATA_DIRECTORY + @"\output_list.txt");
-            WriteGameScoreCount(LeagueInfo.DATA_DIRECTORY + @"\output_count.txt");
+            TabulateTeamScorigamiCount(@"output_teamscorigamicount.txt");
+            WriteScorigamis(@"output.txt");
+            WriteListOfScorigamis(@"output_list.txt");
+            WriteGameScoreCount(@"output_count.txt");
         }
 
         private static void TabulateTeamScorigamiCount(string v)
@@ -352,7 +352,7 @@ namespace WNBA_Scorigami
     {
         public static readonly int START_YEAR = 1997;
         private static List<string> activePlayers = null;
-        public  const string DATA_DIRECTORY = @"D:\wnba_scorigami";
+        public  const string DATA_DIRECTORY = @"datacache";
 
         private static List<WnbaTeam> teams = new List<WnbaTeam>()
         {
