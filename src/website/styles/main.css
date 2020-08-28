@@ -2,10 +2,23 @@
     font-family: 'Inter', sans-serif;
     font-feature-settings: 'tnum' 1;
     text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 30px 10px 30px 10px;
 }
 
 main {
     position: relative;
+}
+
+footer {
+    position: relative;
+    background: #f1f1f1;
+    margin: 30px 0 0 0;
+    padding: 30px 30px 60px 30px;
 }
 
 .viz {
@@ -51,7 +64,7 @@ main {
     background: #212121;
     font-size: 0.8em;
     border: 1px solid #212121;
-    color: white;
+    color: #cccccc;
     z-index: 10;
     transition: all 0.1s ease-out;
     pointer-events: none;
@@ -93,9 +106,12 @@ h3 {
     z-index: 10;
 }
 
+.legend-wrapper h5 {
+    margin: 1em auto 0.5em auto;
+}
+
 .legend {
-    margin-top: 0.3em;
-    margin-right: auto;
+    margin: auto;
     width: 16em;
     display: flex;
     align-items: center;
@@ -115,4 +131,47 @@ h3 {
     height: 1em;
     flex: 1;
     margin: 0 0.6em;
+}
+
+.faq {
+    max-width: 750px;
+    margin: auto;
+}
+
+.faq h2 {
+    font-weight: 100;
+    font-size: 3em;
+}
+
+.faq h3 {
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 40px;
+    font-weight: 500;
+}
+
+.faq p {
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.reference {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    padding: 20px;
+    color: white;
+    background-color: #333333;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reference a, .reference a:visited {
+    color: #FA4D01;
+}
+
+.twitter img {
+    height: 30px;
+    width: auto;
 }
