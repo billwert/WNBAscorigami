@@ -19,13 +19,7 @@ console.log(DATA_URL);
 
 app.use(express.static(__dirname + "/../.."));
 
-var matrix = [];
-var maxpts = 0;
-var maxlosepts = 0;
-var maxcount = 0;
-var maxcount = 0;
-var lastUpdated;
-var newScorigami = [];
+var retdata;
 
 function getData()
 {
@@ -51,48 +45,8 @@ function getData()
 	{
 		if(!err)
 		{
-			data = JSON.parse(data);
+			retdata = JSON.parse(data);
 
-			var newScores = [];
-			var newmatrix = [];
-			for(var i = 0; i < data.length; i++)
-			{
-				var row = data[i];
-				newScores.push(row);
-				if(row.pts_lose > maxlosepts)
-				{
-					maxlosepts = row.pts_lose;
-				}
-				if(row.pts_win > maxpts)
-				{
-					maxpts = row.pts_win;
-				}
-				if(row.count > maxcount)
-				{
-					maxcount = row.count;
-				}
-			}
-			
-			//create matrix with length and width equal to the max points, fill it with 0's
-			for (var i = 0; i <= maxpts; i++)
-			{
-				newmatrix[i] = [];
-				for(var j = 0; j <= maxpts; j++)
-				{
-					newmatrix[i][j] = {count: 0};
-				}
-			}
-			//fill matrix with useful data
-			for(var i = 0; i < newScores.length; i++)
-			{
-				newmatrix[newScores[i].pts_lose][newScores[i].pts_win] = newScores[i];
-			}
-			matrix = newmatrix;
-			var dateOptions = { weekday: "short", year:"numeric", month:"short", day:"numeric", hour:"numeric", minute:"numeric", second:"numeric", timeZoneName:"short"};
-			//lastUpdated = new Date().toUTCString();
-			lastUpdated = new Date().toLocaleDateString("en-US", dateOptions);
-			
-			console.log("done " + lastUpdated);
 		}
 		else
 		{
@@ -114,16 +68,8 @@ setInterval(tick, 1000 * 60 * 60 * 24); // daily
 	
 app.get("/data", function(req, res)
 {
-	var data = {
-		matrix: matrix,
-		maxpts: maxpts,
-		maxlosepts: maxlosepts,
-		maxcount: maxcount,
-		lastUpdated: lastUpdated,
-		newScorigami: newScorigami
-	};
 	//console.log(data);
-	res.json(data);
+	res.json(retdata);
 });
 
 app.get("/*", function(req, res)

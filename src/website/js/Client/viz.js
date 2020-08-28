@@ -2,8 +2,9 @@ async function drawScorigamiViz() {
     // ----------------------
     // 1. Access data
 
-    const dataset = await d3.json("../../datafile.json")
-
+    const dataset = await d3.json("/data")
+    const games = dataset.games
+    const lastupdated = dataset.lastUpdated
     const yAccessor = d => d.pts_win
     const xAccessor = d => d.pts_lose
     const colorAccessor = d => new Date(d.first_date)
@@ -14,16 +15,19 @@ async function drawScorigamiViz() {
     const latestgamelosingteam = d => d.last_team_lose
 
     const minScoreInView = 30
-    const maxScoreInView = d3.max(dataset, yAccessor)
+    const maxScoreInView = d3.max(games, yAccessor)
     const nbaOrange = "#FA4D01"
     const fadednbaOrange = "#f5cc98"
     const yearFormat = d3.timeFormat("%Y")
     
+    const maxScoreInView = d3.max(games, yAccessor)
+
+    // Create impossible scores data
     var impossiblescores = []
     var possiblescores = []
 
-    for (i = minScoreInView; i <= d3.max(dataset, yAccessor); i++) {
-        for (j = minScoreInView; j <= d3.max(dataset, xAccessor);j++) {
+    for (i = minScoreInView; i <= d3.max(games, yAccessor); i++) {
+        for (j = minScoreInView; j <= d3.max(games, xAccessor);j++) {
             if (i<=j){
                 impossiblescores.push({"pts_win" : i, "pts_lose" : j})
             } else {
@@ -71,12 +75,12 @@ async function drawScorigamiViz() {
     // 4. Create scales
 
     const yScale = d3.scaleBand()
-        .domain(d3.range(minScoreInView, d3.max(dataset, yAccessor) + 1))
+        .domain(d3.range(minScoreInView, d3.max(games, yAccessor) + 1))
         .range([dimensions.boundedHeight, 0])
         .paddingInner(0.1)
     
     const xScale = d3.scaleBand()
-        .domain(d3.range(minScoreInView, d3.max(dataset, xAccessor) + 1))
+        .domain(d3.range(minScoreInView, d3.max(games, xAccessor) + 1))
         .range([0, dimensions.boundedHeight]) // Using boundedHeight instead of boundedWeight for square marks and viz
         .paddingInner(0.1)
 
@@ -106,7 +110,7 @@ async function drawScorigamiViz() {
     
     // 5a. Heatmap recs
     bounds.selectAll(".scorigamiscores")
-        .data(dataset)
+        .data(games)
         .join("rect")
         .attr("class", "scorigamiscores")
         .attr("x", d => xScale(xAccessor(d)))
