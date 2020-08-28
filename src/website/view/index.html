@@ -7,14 +7,32 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../styles/main.css"></link>
 	<script src="https://d3js.org/d3.v6.js"></script>
-	<!-- <script src="https://d3js.org/d3-scale.v3.min.js"></script> -->
+	
 </head>
 <body>
 	<header><h1><span class="emphasize">WNBA</span>Scorigami</h1></header>
 	<main>
 		<div class="viz">
-
+			<div class="tooltip">
+				<div class="score">
+					<h3>Score</h3>
+					<div class="scorenumbers">
+						<span id="tooltip-winningscore"></span> - <span id="tooltip-losingscore"></span>
+					</div>
+					<div class="teams">
+						<h3>First game</h3>
+						<div class="firstgame">
+							<span id="tooltip-firstgamewinningteam"></span> vs <span id="tooltip-firstgamelosingteam"></span>
+						</div>
+						<h3>Latest game</h3>
+						<div class="latestgame">
+							<span id="tooltip-latestgamewinningteam"></span> vs <span id="tooltip-latestgamelosingteam"></span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		
 	</main>
 
 	<script src="../js/Client/viz.js"></script>

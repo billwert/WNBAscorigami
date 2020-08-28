@@ -7,6 +7,12 @@ async function drawScorigamiViz() {
 
     const yAccessor = d => d.pts_win
     const xAccessor = d => d.pts_lose
+
+    const firstgamewinningteam = d => d.first_team_win
+    const firstgamelosingteam = d => d.first_team_lose
+    const latestgamewinningteam = d => d.last_team_win
+    const latestgamelosingteam = d => d.last_team_lose
+
     const minScoreInView = 30
     const maxScoreInView = d3.max(dataset, yAccessor)
 
@@ -25,8 +31,8 @@ async function drawScorigamiViz() {
     // 2. Create chart dimensions
 
     let dimensions = {
-        width: d3.select(".viz").node().getBoundingClientRect().height, // height so that it is square
-        height: d3.select(".viz").node().getBoundingClientRect().height,
+        width: window.innerHeight * 0.9, // height so that it is square
+        height: window.innerHeight * 0.9,
         margin: {
           top: 15,
           right: 15,
@@ -82,6 +88,9 @@ async function drawScorigamiViz() {
         .attr("width", xScale.bandwidth())
         .attr("height", yScale.bandwidth())
         .attr("fill", "#FA4D01")
+        .on("mouseenter", onMouseEnter)
+        .on("mouseleave", onMouseLeave)
+
 
     // 5b. Impossible scores
     bounds.selectAll(".impossiblescores")
@@ -136,6 +145,51 @@ async function drawScorigamiViz() {
         .text("Losing score")
         .style("text-transform", "capitalize")
 
+
+    // 7. Set up interactions
+
+    const tooltip = d3.select(".tooltip")
+
+    function onMouseEnter(event, datum) {
+        const activescorigami = bounds.append("rect")
+            .attr("class", "activescorigami")
+            .attr("x", d => xScale(xAccessor(datum)))
+            .attr("y", d => yScale(yAccessor(datum)))
+            .attr("width", xScale.bandwidth())
+            .attr("height", yScale.bandwidth())
+            .attr("fill", "black")
+            .style("pointer-events", "none")
+
+        tooltip.select("#tooltip-winningscore")
+            .text(yAccessor(datum))
+        
+        tooltip.select("#tooltip-losingscore")
+            .text(xAccessor(datum))
+
+        tooltip.select("#tooltip-firstgamewinningteam")
+            .text(firstgamewinningteam(datum))
+        
+        tooltip.select("#tooltip-firstgamelosingteam")
+            .text(firstgamelosingteam(datum))
+
+        tooltip.select("#tooltip-latestgamewinningteam")
+            .text(latestgamewinningteam(datum))
+        
+        tooltip.select("#tooltip-latestgamelosingteam")
+            .text(latestgamelosingteam(datum))
+
+        const x = xScale(xAccessor(datum)) + dimensions.margin.left + xScale.bandwidth() / 2
+        const y = yScale(yAccessor(datum)) + dimensions.margin.top
+        
+        tooltip.style("transform", `translate(calc( -50% + ${x}px),calc(-100% + ${y}px))`)
+        tooltip.style("opacity", 1)
+    }
+
+    function onMouseLeave() {
+        d3.selectAll(".activescorigami")
+            .remove()
+        tooltip.style("opacity", 0)
+    }
 }
 
 drawScorigamiViz()

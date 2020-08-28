@@ -3,13 +3,61 @@
     text-align: center;
 }
 
+main {
+    position: relative;
+}
+
 .viz {
-    width: 90vw;
-    height: 90vh;
-    margin: auto;
-    background: white;
+    position: relative;
+    display: inline-block;
 }
 
 .emphasize {
     color: #FA4D01;
+}
+
+.tooltip {
+    opacity: 1;
+    position: absolute;
+    top: -14px;
+    left: 0;
+    padding: 0.5em;
+    background: #212121;
+    font-size: 0.8em;
+    border: 1px solid #212121;
+    color: white;
+    z-index: 10;
+    transition: all 0.1s ease-out;
+    pointer-events: none;
+    
+}
+
+.scorenumbers {
+    font-size: 2em;
+    font-weight: 100;
+    margin-top: 2px;
+}
+
+.scorenumbers, .firstgame {
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin: 0;
+}
+
+.tooltip:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #212121;
+    border: 1px solid #212121;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: translate(-50%, 50%) rotate(45deg);
+    transform-origin: center center;
+    z-index: 10;
 }
