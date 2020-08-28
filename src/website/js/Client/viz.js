@@ -8,6 +8,7 @@ async function drawScorigamiViz() {
     const yAccessor = d => d.pts_win
     const xAccessor = d => d.pts_lose
     const minScoreInView = 30
+    const maxScoreInView = d3.max(dataset, yAccessor)
 
     // Create impossible scores data
     var impossiblescores = []
@@ -24,12 +25,12 @@ async function drawScorigamiViz() {
     // 2. Create chart dimensions
 
     let dimensions = {
-        width: d3.select(".viz").node().getBoundingClientRect().width,
+        width: d3.select(".viz").node().getBoundingClientRect().height, // height so that it is square
         height: d3.select(".viz").node().getBoundingClientRect().height,
         margin: {
           top: 15,
           right: 15,
-          bottom: 40,
+          bottom: 60,
           left: 60,
         },
       }
@@ -61,12 +62,12 @@ async function drawScorigamiViz() {
     const yScale = d3.scaleBand()
         .domain(d3.range(minScoreInView, d3.max(dataset, yAccessor) + 1))
         .range([dimensions.boundedHeight, 0])
-        .paddingInner(0.05)
+        .paddingInner(0.1)
     
     const xScale = d3.scaleBand()
         .domain(d3.range(minScoreInView, d3.max(dataset, xAccessor) + 1))
         .range([0, dimensions.boundedHeight]) // Using boundedHeight instead of boundedWeight for square marks and viz
-        .paddingInner(0.05)
+        .paddingInner(0.1)
 
 
     // 5. Draw data
@@ -92,6 +93,48 @@ async function drawScorigamiViz() {
         .attr("width", xScale.bandwidth())
         .attr("height", yScale.bandwidth())
         .attr("fill", "#dddddd")
+    
+
+    // 6. Draw peripherals
+
+    axisStartingNumber = Math.floor(minScoreInView / 10) * 10
+    axisEndingNumber = Math.ceil(maxScoreInView / 10) * 10
+    axisTickValues = d3.range(axisStartingNumber, axisEndingNumber, 10)
+
+    const yAxisGenerator = d3.axisLeft()
+        .scale(yScale)
+        .tickSize(0)
+        .tickValues(axisTickValues)
+
+    const yAxis = bounds.append("g")
+        .call(yAxisGenerator)
+
+    const yAxisLabel = yAxis.append("text")
+        .attr("x", -dimensions.boundedHeight / 2)
+        .attr("y", -dimensions.margin.left + 10)
+        .attr("fill", "black")
+        .style("font-size", "1.4em")
+        .text("Winning score")
+        .style("text-transform", "capitalize")
+        .style("transform", "rotate(-90deg)")
+        .style("text-anchor", "middle")
+
+    const xAxisGenerator = d3.axisBottom()
+        .scale(xScale)
+        .tickSize(0)
+        .tickValues(axisTickValues)
+
+    const xAxis = bounds.append("g")
+        .call(xAxisGenerator)
+            .style("transform", `translateY(${dimensions.boundedHeight}px)`)
+
+    const xAxisLabel = xAxis.append("text")
+        .attr("x", dimensions.boundedWidth / 2)
+        .attr("y", dimensions.margin.bottom - 10)
+        .attr("fill", "black")
+        .style("font-size", "1.4em")
+        .text("Losing score")
+        .style("text-transform", "capitalize")
 
 }
 
