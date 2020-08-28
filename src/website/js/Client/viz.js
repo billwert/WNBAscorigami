@@ -20,8 +20,6 @@ async function drawScorigamiViz() {
     const fadednbaOrange = "#f5cc98"
     const yearFormat = d3.timeFormat("%Y")
     
-    const maxScoreInView = d3.max(games, yAccessor)
-
     // Create impossible scores data
     var impossiblescores = []
     var possiblescores = []
@@ -84,7 +82,7 @@ async function drawScorigamiViz() {
         .range([0, dimensions.boundedHeight]) // Using boundedHeight instead of boundedWeight for square marks and viz
         .paddingInner(0.1)
 
-    const colorRangeDomain = d3.extent(dataset, colorAccessor)
+    const colorRangeDomain = d3.extent(games, colorAccessor)
     const colorRange = d3.scaleLinear()
         .domain(colorRangeDomain)
         .range([0, 1])
