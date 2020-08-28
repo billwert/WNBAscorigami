@@ -7,6 +7,18 @@ async function drawScorigamiViz() {
 
     const yAccessor = d => d.pts_win
     const xAccessor = d => d.pts_lose
+    const minScoreInView = 30
+
+    // Create impossible scores data
+    var impossiblescores = []
+
+    for (i = minScoreInView; i <= d3.max(dataset, yAccessor); i++) {
+        for (j = minScoreInView; j <= d3.max(dataset, xAccessor);j++) {
+            if (i<=j){
+                impossiblescores.push({"pts_win" : i, "pts_lose" : j})
+            }
+        }
+    }
 
 
     // 2. Create chart dimensions
@@ -47,30 +59,39 @@ async function drawScorigamiViz() {
     // 4. Create scales
 
     const yScale = d3.scaleBand()
-        .domain(d3.range(30, d3.max(dataset, yAccessor) + 1))
+        .domain(d3.range(minScoreInView, d3.max(dataset, yAccessor) + 1))
         .range([dimensions.boundedHeight, 0])
         .paddingInner(0.05)
-        // .nice()
     
     const xScale = d3.scaleBand()
-        .domain(d3.range(30, d3.max(dataset, xAccessor)))
-        .range([0, dimensions.boundedWidth])
+        .domain(d3.range(minScoreInView, d3.max(dataset, xAccessor) + 1))
+        .range([0, dimensions.boundedHeight]) // Using boundedHeight instead of boundedWeight for square marks and viz
         .paddingInner(0.05)
-        // .nice()
 
 
     // 5. Draw data
-        console.log(xScale.bandWidth())
+    
     // 5a. Heatmap recs
-    bounds.selectAll("rects")
+    bounds.selectAll(".scorigamiscores")
         .data(dataset)
         .join("rect")
+        .attr("class", "scorigamiscores")
         .attr("x", d => xScale(xAccessor(d)))
         .attr("y", d => yScale(yAccessor(d)))
-        .attr("width", 5)
-        .attr("height", 5)
+        .attr("width", xScale.bandwidth())
+        .attr("height", yScale.bandwidth())
         .attr("fill", "#FA4D01")
 
+    // 5b. Impossible scores
+    bounds.selectAll(".impossiblescores")
+        .data(impossiblescores)
+        .join("rect")
+        .attr("class", "impossiblescores")
+        .attr("x", d => xScale(xAccessor(d)))
+        .attr("y", d => yScale(yAccessor(d)))
+        .attr("width", xScale.bandwidth())
+        .attr("height", yScale.bandwidth())
+        .attr("fill", "#dddddd")
 
 }
 
