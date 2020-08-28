@@ -1,12 +1,12 @@
 async function drawScorigamiViz() {
-
-
+    // ----------------------
     // 1. Access data
 
     const dataset = await d3.json("../../datafile.json")
 
     const yAccessor = d => d.pts_win
     const xAccessor = d => d.pts_lose
+    const colorAccessor = d => new Date(d.first_date)
 
     const firstgamewinningteam = d => d.first_team_win
     const firstgamelosingteam = d => d.first_team_lose
@@ -15,19 +15,24 @@ async function drawScorigamiViz() {
 
     const minScoreInView = 30
     const maxScoreInView = d3.max(dataset, yAccessor)
-
-    // Create impossible scores data
+    const nbaOrange = "#FA4D01"
+    const fadednbaOrange = "#f5cc98"
+    const yearFormat = d3.timeFormat("%Y")
+    
     var impossiblescores = []
+    var possiblescores = []
 
     for (i = minScoreInView; i <= d3.max(dataset, yAccessor); i++) {
         for (j = minScoreInView; j <= d3.max(dataset, xAccessor);j++) {
             if (i<=j){
                 impossiblescores.push({"pts_win" : i, "pts_lose" : j})
+            } else {
+                possiblescores.push({"pts_win" : i, "pts_lose" : j})
             }
         }
     }
 
-
+    // ----------------------
     // 2. Create chart dimensions
 
     let dimensions = {
@@ -47,7 +52,7 @@ async function drawScorigamiViz() {
         - dimensions.margin.top
         - dimensions.margin.bottom
 
-
+    // ----------------------
     // 3. Draw canvas
 
     const wrapper = d3.select(".viz")
@@ -62,7 +67,7 @@ async function drawScorigamiViz() {
         dimensions.margin.top
         }px)`)
 
-        
+    // ----------------------    
     // 4. Create scales
 
     const yScale = d3.scaleBand()
@@ -75,8 +80,29 @@ async function drawScorigamiViz() {
         .range([0, dimensions.boundedHeight]) // Using boundedHeight instead of boundedWeight for square marks and viz
         .paddingInner(0.1)
 
+    const colorRangeDomain = d3.extent(dataset, colorAccessor)
+    const colorRange = d3.scaleLinear()
+        .domain(colorRangeDomain)
+        .range([0, 1])
+        .clamp(true)
+    const colorGradient = d3.interpolateHcl(fadednbaOrange, nbaOrange)
+    const colorScale = d => colorGradient(colorRange(d) || 0)
 
+    // ----------------------
     // 5. Draw data
+
+    // 5c. Possible scores
+    bounds.selectAll(".possiblescores")
+        .data(possiblescores)
+        .join("rect")
+        .attr("class", "possiblescores")
+        .attr("x", d => xScale(xAccessor(d)))
+        .attr("y", d => yScale(yAccessor(d)))
+        .attr("width", xScale.bandwidth())
+        .attr("height", yScale.bandwidth())
+        .attr("fill", "white")
+        .on("mouseenter", onMouseEnterBlankspace)
+        .on("mouseleave", onMouseLeaveBlankspace)
     
     // 5a. Heatmap recs
     bounds.selectAll(".scorigamiscores")
@@ -87,10 +113,9 @@ async function drawScorigamiViz() {
         .attr("y", d => yScale(yAccessor(d)))
         .attr("width", xScale.bandwidth())
         .attr("height", yScale.bandwidth())
-        .attr("fill", "#FA4D01")
+        .attr("fill", d => colorScale(colorAccessor(d)))
         .on("mouseenter", onMouseEnter)
         .on("mouseleave", onMouseLeave)
-
 
     // 5b. Impossible scores
     bounds.selectAll(".impossiblescores")
@@ -104,6 +129,8 @@ async function drawScorigamiViz() {
         .attr("fill", "#dddddd")
     
 
+
+    // ----------------------
     // 6. Draw peripherals
 
     axisStartingNumber = Math.floor(minScoreInView / 10) * 10
@@ -145,7 +172,18 @@ async function drawScorigamiViz() {
         .text("Losing score")
         .style("text-transform", "capitalize")
 
+    d3.select("#legend-min")
+        .text(yearFormat(colorRangeDomain[0]))
+      d3.select("#legend-max")
+        .text(yearFormat(colorRangeDomain[1]))
+      d3.select("#legend-gradient")
+        .style("background", `linear-gradient(to right, ${
+          new Array(10).fill(null).map((d, i) => (
+            `${colorGradient(i / 9)} ${i * 100 / 9}%`
+          )).join(", ")
+        })`)
 
+    // ----------------------
     // 7. Set up interactions
 
     const tooltip = d3.select(".tooltip")
@@ -190,6 +228,39 @@ async function drawScorigamiViz() {
             .remove()
         tooltip.style("opacity", 0)
     }
+
+    const possiblescoreindicator = d3.select(".possiblescoreindicator")
+
+    function onMouseEnterBlankspace(event, datum) {
+        const activeblankspace = bounds.append("rect")
+            .attr("class", "activeblankspace")
+            .attr("x", d => xScale(xAccessor(datum)))
+            .attr("y", d => yScale(yAccessor(datum)))
+            .attr("width", xScale.bandwidth())
+            .attr("height", yScale.bandwidth())
+            .attr("fill", "#cccccc")
+            .style("pointer-events", "none")
+
+        possiblescoreindicator.select("#possiblescoreindicator-winningscore")
+            .text(yAccessor(datum))
+        
+        possiblescoreindicator.select("#possiblescoreindicator-losingscore")
+            .text(xAccessor(datum))
+
+        const x = xScale(xAccessor(datum)) + dimensions.margin.left + xScale.bandwidth() / 2
+        const y = yScale(yAccessor(datum)) + dimensions.margin.top
+        
+        possiblescoreindicator.style("transform", `translate(calc( -50% + ${x}px),calc(-100% + ${y}px))`)
+        possiblescoreindicator.style("opacity", 1)
+    }
+
+    function onMouseLeaveBlankspace() {
+        d3.selectAll(".activeblankspace")
+            .remove()
+        possiblescoreindicator.style("opacity", 0)
+    }
+
+
 }
 
 drawScorigamiViz()

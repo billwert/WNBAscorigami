@@ -1,5 +1,6 @@
 * {
     font-family: 'Inter', sans-serif;
+    font-feature-settings: 'tnum' 1;
     text-align: center;
 }
 
@@ -17,7 +18,7 @@ main {
 }
 
 .tooltip {
-    opacity: 1;
+    opacity: 0;
     position: absolute;
     top: -14px;
     left: 0;
@@ -29,7 +30,6 @@ main {
     z-index: 10;
     transition: all 0.1s ease-out;
     pointer-events: none;
-    
 }
 
 .scorenumbers {
@@ -40,6 +40,21 @@ main {
 
 .scorenumbers, .firstgame {
     margin-bottom: 15px;
+}
+
+.possiblescoreindicator {
+    opacity: 1;
+    position: absolute;
+    top: -14px;
+    left: 0;
+    padding: 0.2em;
+    background: #212121;
+    font-size: 0.8em;
+    border: 1px solid #212121;
+    color: white;
+    z-index: 10;
+    transition: all 0.1s ease-out;
+    pointer-events: none;
 }
 
 h3 {
@@ -60,4 +75,44 @@ h3 {
     transform: translate(-50%, 50%) rotate(45deg);
     transform-origin: center center;
     z-index: 10;
+}
+
+.possiblescoreindicator:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #212121;
+    border: 1px solid #212121;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: translate(-50%, 50%) rotate(45deg);
+    transform-origin: center center;
+    z-index: 10;
+}
+
+.legend {
+    margin-top: 0.3em;
+    margin-right: auto;
+    width: 16em;
+    display: flex;
+    align-items: center;
+}
+
+.legend-text {
+    width: 3em;
+    font-size: 0.8em;
+    font-weight: 200;
+}
+
+.legend-text:first-of-type {
+    text-align: right;
+}
+
+.legend-gradient {
+    height: 1em;
+    flex: 1;
+    margin: 0 0.6em;
 }
