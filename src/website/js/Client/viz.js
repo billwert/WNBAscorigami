@@ -43,8 +43,8 @@ async function drawScorigamiViz() {
     // 2. Create chart dimensions
 
     let dimensions = {
-        width: window.innerHeight * 0.9, // height so that it is square
-        height: window.innerHeight * 0.9,
+        width: window.innerHeight * 0.85, // height so that it is square
+        height: window.innerHeight * 0.85,
         margin: {
           top: 15,
           right: 15,

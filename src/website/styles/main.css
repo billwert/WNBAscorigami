@@ -1,13 +1,12 @@
 * {
     font-family: 'Inter', sans-serif;
-    font-feature-settings: 'tnum' 1;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 header {
-    padding: 30px 10px 30px 10px;
+    padding: 30px 10px 5px 10px;
 }
 
 main {
@@ -24,6 +23,7 @@ footer {
 .viz {
     position: relative;
     display: inline-block;
+    font-feature-settings: 'tnum' 1;
 }
 
 .emphasize {
