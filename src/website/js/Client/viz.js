@@ -203,10 +203,10 @@ async function drawScorigamiViz() {
         .text(mostrecentscorigamidate)
 
     d3.select("#mostrecentwiningteam")
-        .text(mostrecentscorigami.first_team_win)
+        .text(`${mostrecentscorigami.first_team_win} (${mostrecentscorigami.pts_win})`)
     
     d3.select("#mostrecentlosingteam")
-        .text(mostrecentscorigami.first_team_lose)
+        .text(`${mostrecentscorigami.first_team_lose} (${mostrecentscorigami.pts_lose})`)
 
     // ----------------------
     // 7. Set up interactions
