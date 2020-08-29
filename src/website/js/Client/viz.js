@@ -194,7 +194,7 @@ async function drawScorigamiViz() {
     const statsboxboundingrect = statsbox.node().getBoundingClientRect()
 
     statsbox
-        .style("transform", `translate(${dimensions.boundedWidth - statsboxboundingrect.width - 20}px,${dimensions.boundedHeight - statsboxboundingrect.height - 50}px)`)
+        .style("transform", `translate(${dimensions.boundedWidth - statsboxboundingrect.width - 50}px,${dimensions.boundedHeight - statsboxboundingrect.height - 50}px)`)
     
     d3.select(".totalnumberofscorigamis")
         .text(totalnumberofscorigamis)
