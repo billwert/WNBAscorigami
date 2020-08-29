@@ -3,7 +3,7 @@ async function drawScorigamiViz() {
     // 1. Access data
 
     const dataset = await d3.json("/data")
-    const games = dataset.games
+    const games = dataset.games.filter(d => d.pts_win > 25) // TODO: Remove when data is cleaned
     const lastupdated = dataset.lastUpdated
     const yAccessor = d => d.pts_win
     const xAccessor = d => d.pts_lose
@@ -19,7 +19,12 @@ async function drawScorigamiViz() {
     const nbaOrange = "#FA4D01"
     const fadednbaOrange = "#f5cc98"
     const yearFormat = d3.timeFormat("%Y")
-    
+    const monthdayyearFormat = d3.timeFormat("%b %d, %Y")
+
+    const totalnumberofscorigamis = games.length
+    const mostrecentscorigami = games[d3.maxIndex(games, colorAccessor)]
+    const mostrecentscorigamidate = monthdayyearFormat(new Date(mostrecentscorigami.first_date))
+
     // Create impossible scores data
     var impossiblescores = []
     var possiblescores = []
@@ -38,8 +43,8 @@ async function drawScorigamiViz() {
     // 2. Create chart dimensions
 
     let dimensions = {
-        width: window.innerHeight * 0.9, // height so that it is square
-        height: window.innerHeight * 0.9,
+        width: window.innerHeight * 0.85, // height so that it is square
+        height: window.innerHeight * 0.85,
         margin: {
           top: 15,
           right: 15,
@@ -176,14 +181,32 @@ async function drawScorigamiViz() {
 
     d3.select("#legend-min")
         .text(yearFormat(colorRangeDomain[0]))
-      d3.select("#legend-max")
+    d3.select("#legend-max")
         .text(yearFormat(colorRangeDomain[1]))
-      d3.select("#legend-gradient")
+    d3.select("#legend-gradient")
         .style("background", `linear-gradient(to right, ${
           new Array(10).fill(null).map((d, i) => (
             `${colorGradient(i / 9)} ${i * 100 / 9}%`
           )).join(", ")
         })`)
+
+    const statsbox = d3.select(".statsbox")
+    const statsboxboundingrect = statsbox.node().getBoundingClientRect()
+
+    statsbox
+        .style("transform", `translate(${dimensions.boundedWidth - statsboxboundingrect.width - 20}px,${dimensions.boundedHeight - statsboxboundingrect.height - 50}px)`)
+    
+    d3.select(".totalnumberofscorigamis")
+        .text(totalnumberofscorigamis)
+
+    d3.select(".mostrecentscorigami")
+        .text(mostrecentscorigamidate)
+
+    d3.select("#mostrecentwiningteam")
+        .text(`${mostrecentscorigami.first_team_win} (${mostrecentscorigami.pts_win})`)
+    
+    d3.select("#mostrecentlosingteam")
+        .text(`${mostrecentscorigami.first_team_lose} (${mostrecentscorigami.pts_lose})`)
 
     // ----------------------
     // 7. Set up interactions
