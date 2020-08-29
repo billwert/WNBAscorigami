@@ -7,7 +7,10 @@ async function drawScorigamiViz() {
     const lastupdated = dataset.lastUpdated
     const yAccessor = d => d.pts_win
     const xAccessor = d => d.pts_lose
-    const colorAccessor = d => new Date(d.first_date)
+    const dateAccessor = d => new Date(d.first_date)
+    const countAccessor = d => d.count
+    var currentMetric = "date"
+    const colorAccessor = currentMetric === "date" ? dateAccessor : countAccessor
 
     const firstgamewinningteam = d => d.first_team_win
     const firstgamelosingteam = d => d.first_team_lose
@@ -179,10 +182,23 @@ async function drawScorigamiViz() {
         .text("Losing score")
         .style("text-transform", "capitalize")
 
+    var legendMinLabel = ""
+    var legendMaxLabel = ""
+    var legendTitle = currentMetric === "date" ? "Year of original scorigami game" : "Number of games"
+
+    if (currentMetric === "date") {
+        legendMinLabel = yearFormat(colorRangeDomain[0])
+        legendMaxLabel = yearFormat(colorRangeDomain[1])
+    } else {
+        legendMinLabel = colorRangeDomain[0]
+        legendMaxLabel = colorRangeDomain[1]
+    }
+    d3.select(".legend-title")
+        .text(legendTitle)
     d3.select("#legend-min")
-        .text(yearFormat(colorRangeDomain[0]))
+        .text(legendMinLabel)
     d3.select("#legend-max")
-        .text(yearFormat(colorRangeDomain[1]))
+        .text(legendMaxLabel)
     d3.select("#legend-gradient")
         .style("background", `linear-gradient(to right, ${
           new Array(10).fill(null).map((d, i) => (
@@ -285,6 +301,25 @@ async function drawScorigamiViz() {
         possiblescoreindicator.style("opacity", 0)
     }
 
+    // Change metric buttons
+    dateMetricButton = d3.select(".change-metric.date")
+    countMetricButton = d3.select(".change-metric.count")
+    dateMetricButton.node().addEventListener("click", dateMetricButtonClick)
+    countMetricButton.node().addEventListener("click", countMetricButtonClick)
+    
+    function dateMetricButtonClick() {
+        currentMetric = "date"
+        dateMetricButton.attr("class", "change-metric date active")
+        countMetricButton.attr("class", "change-metric count")
+        console.log(currentMetric)
+    }
+
+    function countMetricButtonClick() {
+        currentMetric = "count"
+        dateMetricButton.attr("class", "change-metric date")
+        countMetricButton.attr("class", "change-metric count active")
+        console.log(currentMetric)
+    }
 
 }
 
