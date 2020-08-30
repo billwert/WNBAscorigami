@@ -17,7 +17,6 @@ namespace WNBAScorigami
         private static HashSet<int> updatedYears = new HashSet<int>();
         private static Storage storage = new Storage("WNBAStorage", "leaguedata");
 
-
         public static async Task Run(ILogger log)
         {
             Stopwatch sw = Stopwatch.StartNew();
