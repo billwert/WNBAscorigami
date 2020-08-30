@@ -1,5 +1,3 @@
-using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
 using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -7,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace WNBAScorigami
@@ -19,16 +15,11 @@ namespace WNBAScorigami
         private static List<WnbaGame> allGames = new List<WnbaGame>(5000);
         private static Dictionary<string, int> scorigamiByTeam = new Dictionary<string, int>();
         private static HashSet<int> updatedYears = new HashSet<int>();
+        private static Storage storage = new Storage("WNBAStorage", "leaguedata");
 
-        private static string blobConnectionString;
-        private static BlobServiceClient serviceClient;
-        private static BlobContainerClient containerClient;
 
         public static async Task Run(ILogger log)
         {
-            blobConnectionString = Environment.GetEnvironmentVariable("WNBAStorage");
-            serviceClient = new BlobServiceClient(blobConnectionString);
-            containerClient = serviceClient.GetBlobContainerClient("leaguedata");
             Stopwatch sw = Stopwatch.StartNew();
             var timings = new Dictionary<string, double>();
             void reset(string name)
@@ -87,12 +78,7 @@ namespace WNBAScorigami
             }
             var upload = new { games = data, lastUpdated = DateTime.Now };
             var json = JsonConvert.SerializeObject(upload);
-            var blob = containerClient.GetBlobClient("scorigamidata.json");
-            using var stream = new MemoryStream(Encoding.UTF8.GetBytes(json));
-            await blob.UploadAsync(stream, new BlobHttpHeaders
-            {
-                ContentType = "application/json"
-            });
+            await storage.UploadJson(json, "scorigamidata.json");
         }
 
         // TODO: billwert: need this to show up in a json somewhere.
@@ -144,24 +130,16 @@ namespace WNBAScorigami
         private async static Task SaveYear(List<WnbaGame> games)
         {
             string json = JsonConvert.SerializeObject(games);
-            var blob = containerClient.GetBlobClient(GameFilePath(games.First().Year));
-            using var stream = new MemoryStream(Encoding.UTF8.GetBytes(json));
-            await blob.UploadAsync(stream, new BlobHttpHeaders
-            {
-                ContentType = "application/json"
-            });
+            await storage.UploadJson(json, GameFileName(games.First().Year));
         }
 
-        private async static Task<string> LoadYear(int year)
+        private async static Task<List<WnbaGame>> LoadYear(int year)
         {
-            var blob = containerClient.GetBlobClient(GameFilePath(year));
-            BlobDownloadInfo jsonBytes = await blob.DownloadAsync();
-            using var ms = new MemoryStream();
-            await jsonBytes.Content.CopyToAsync(ms);
-            return Encoding.UTF8.GetString(ms.ToArray());
+            var json = await storage.DownloadJson(GameFileName(year));
+            return JsonConvert.DeserializeObject<List<WnbaGame>>(json);
         }
 
-        private static string GameFilePath(int year) => $"{year}_games.json";
+        private static string GameFileName(int year) => $"{year}_games.json";
         public async static Task LoadGameData()
         {
             var scheduleURLFormat = @"https://www.basketball-reference.com/wnba/years/{0}-schedule.html";
@@ -172,7 +150,7 @@ namespace WNBAScorigami
             {
                 if (i != DateTime.Now.Year)
                 {
-                    var games = JsonConvert.DeserializeObject<List<WnbaGame>>(await LoadYear(i));
+                    var games = await LoadYear(i);
                     allGames.AddRange(games);
                     continue;
                 }
@@ -184,7 +162,6 @@ namespace WNBAScorigami
                     await SaveYear(seasonOfGames);
                     allGames.AddRange(seasonOfGames);
                 }
-
             }
         }
 
