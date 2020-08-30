@@ -1,0 +1,5 @@
+{
+    "appService.showBuildDuringDeployPrompt": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/c09de2c9-9622-4513-aad0-ad93b1d464cc/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/wnbascorigami",
+    "appService.deploySubpath": "."
+}
