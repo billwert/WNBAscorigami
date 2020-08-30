@@ -64,7 +64,7 @@ function tick()
 
 tick();
 
-setInterval(tick, 1000 * 60 * 60 * 24); // daily
+setInterval(tick, 1000 * 60 * 60); // hourly
 	
 app.get("/data", function(req, res)
 {
