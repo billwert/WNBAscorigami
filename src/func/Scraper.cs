@@ -151,6 +151,7 @@ namespace WNBAScorigami
                 ContentType = "application/json"
             });
         }
+
         private async static Task<string> LoadYear(int year)
         {
             var blob = containerClient.GetBlobClient(GameFilePath(year));
@@ -202,7 +203,6 @@ namespace WNBAScorigami
                 return playerNames;
             }
 
-
             foreach (var node in nodes)
             {
                 playerNames.Add(node.InnerText);
@@ -210,7 +210,6 @@ namespace WNBAScorigami
 
             return playerNames;
         }
-
 
         private static void UpdateGame(WnbaGame game, ScorigamiType type)
         {
@@ -221,6 +220,7 @@ namespace WNBAScorigami
                 updatedYears.Add(game.Year);
             }
         }
+
         public static void CalculateScorigamis()
         {
             foreach (var game in allGames)
@@ -246,7 +246,6 @@ namespace WNBAScorigami
                 }
             }
         }
-
 
         // TODO: billwert: need this to show up in a json somewhere.
         // public static void TabulateTeamScorigamiCount(string path)
