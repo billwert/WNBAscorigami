@@ -124,6 +124,38 @@ h3 {
     margin-bottom: 15px;
 }
 
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+}
+
+.buttons-wrapper {
+    width: 16em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttons-wrapper h5 {
+    margin: 1em auto 0.5em auto;
+}
+
+button.change-metric {
+    height: 2em;
+    padding: 0 10px;
+    border: 0;
+    border-radius: 0;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+button.change-metric.active {
+    background-color: #FA4D01;
+    color: white;
+}
+
 .legend-wrapper h5 {
     margin: 1em auto 0.5em auto;
 }

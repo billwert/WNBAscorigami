@@ -7,7 +7,9 @@ async function drawScorigamiViz() {
     const lastupdated = dataset.lastUpdated
     const yAccessor = d => d.pts_win
     const xAccessor = d => d.pts_lose
-    const colorAccessor = d => new Date(d.first_date)
+    const dateAccessor = d => new Date(d.first_date)
+    const countAccessor = d => d.count
+    var currentMetric = "date"
 
     const firstgamewinningteam = d => d.first_team_win
     const firstgamelosingteam = d => d.first_team_lose
@@ -22,7 +24,7 @@ async function drawScorigamiViz() {
     const monthdayyearFormat = d3.timeFormat("%b %d, %Y")
 
     const totalnumberofscorigamis = games.length
-    const mostrecentscorigami = games[d3.maxIndex(games, colorAccessor)]
+    const mostrecentscorigami = games[d3.maxIndex(games, dateAccessor)]
     const mostrecentscorigamidate = monthdayyearFormat(new Date(mostrecentscorigami.first_date))
 
     // Create impossible scores data
@@ -87,14 +89,6 @@ async function drawScorigamiViz() {
         .range([0, dimensions.boundedHeight]) // Using boundedHeight instead of boundedWeight for square marks and viz
         .paddingInner(0.1)
 
-    const colorRangeDomain = d3.extent(games, colorAccessor)
-    const colorRange = d3.scaleLinear()
-        .domain(colorRangeDomain)
-        .range([0, 1])
-        .clamp(true)
-    const colorGradient = d3.interpolateHcl(fadednbaOrange, nbaOrange)
-    const colorScale = d => colorGradient(colorRange(d) || 0)
-
     // ----------------------
     // 5. Draw data
 
@@ -112,17 +106,56 @@ async function drawScorigamiViz() {
         .on("mouseleave", onMouseLeaveBlankspace)
     
     // 5a. Heatmap recs
-    bounds.selectAll(".scorigamiscores")
-        .data(games)
-        .join("rect")
-        .attr("class", "scorigamiscores")
-        .attr("x", d => xScale(xAccessor(d)))
-        .attr("y", d => yScale(yAccessor(d)))
-        .attr("width", xScale.bandwidth())
-        .attr("height", yScale.bandwidth())
-        .attr("fill", d => colorScale(colorAccessor(d)))
-        .on("mouseenter", onMouseEnter)
-        .on("mouseleave", onMouseLeave)
+    function drawHeatMapRects(metric) {
+        currentMetric = metric
+
+        const colorAccessor = currentMetric === "date" ? dateAccessor : countAccessor
+
+        const colorRangeDomain = d3.extent(games, colorAccessor)
+        const colorRange = d3.scaleLinear()
+            .domain(colorRangeDomain)
+            .range([0, 1])
+            .clamp(true)
+        const colorGradient = d3.interpolateHcl(fadednbaOrange, nbaOrange)
+        const colorScale = d => colorGradient(colorRange(d) || 0)
+
+        bounds.selectAll(".scorigamiscores")
+            .data(games)
+            .join("rect")
+            .attr("class", "scorigamiscores")
+            .attr("x", d => xScale(xAccessor(d)))
+            .attr("y", d => yScale(yAccessor(d)))
+            .attr("width", xScale.bandwidth())
+            .attr("height", yScale.bandwidth())
+            .attr("fill", d => colorScale(colorAccessor(d)))
+            .on("mouseenter", onMouseEnter)
+            .on("mouseleave", onMouseLeave)
+
+        var legendMinLabel = ""
+        var legendMaxLabel = ""
+        var legendTitle = currentMetric === "date" ? "Year of original scorigami game" : "Number of games"
+
+        if (currentMetric === "date") {
+            legendMinLabel = yearFormat(colorRangeDomain[0])
+            legendMaxLabel = yearFormat(colorRangeDomain[1])
+        } else {
+            legendMinLabel = colorRangeDomain[0]
+            legendMaxLabel = colorRangeDomain[1]
+        }
+        d3.select(".legend-title")
+            .text(legendTitle)
+        d3.select("#legend-min")
+            .text(legendMinLabel)
+        d3.select("#legend-max")
+            .text(legendMaxLabel)
+        d3.select("#legend-gradient")
+            .style("background", `linear-gradient(to right, ${
+            new Array(10).fill(null).map((d, i) => (
+                `${colorGradient(i / 9)} ${i * 100 / 9}%`
+            )).join(", ")
+            })`)
+    }
+    drawHeatMapRects(currentMetric)
 
     // 5b. Impossible scores
     bounds.selectAll(".impossiblescores")
@@ -179,22 +212,13 @@ async function drawScorigamiViz() {
         .text("Losing score")
         .style("text-transform", "capitalize")
 
-    d3.select("#legend-min")
-        .text(yearFormat(colorRangeDomain[0]))
-    d3.select("#legend-max")
-        .text(yearFormat(colorRangeDomain[1]))
-    d3.select("#legend-gradient")
-        .style("background", `linear-gradient(to right, ${
-          new Array(10).fill(null).map((d, i) => (
-            `${colorGradient(i / 9)} ${i * 100 / 9}%`
-          )).join(", ")
-        })`)
+    
 
     const statsbox = d3.select(".statsbox")
     const statsboxboundingrect = statsbox.node().getBoundingClientRect()
 
     statsbox
-        .style("transform", `translate(${dimensions.boundedWidth - statsboxboundingrect.width - 20}px,${dimensions.boundedHeight - statsboxboundingrect.height - 50}px)`)
+        .style("transform", `translate(${dimensions.boundedWidth - statsboxboundingrect.width - 50}px,${dimensions.boundedHeight - statsboxboundingrect.height - 50}px)`)
     
     d3.select(".totalnumberofscorigamis")
         .text(totalnumberofscorigamis)
@@ -285,6 +309,23 @@ async function drawScorigamiViz() {
         possiblescoreindicator.style("opacity", 0)
     }
 
+    // Change metric buttons
+    dateMetricButton = d3.select(".change-metric.date")
+    countMetricButton = d3.select(".change-metric.count")
+    dateMetricButton.node().addEventListener("click", dateMetricButtonClick)
+    countMetricButton.node().addEventListener("click", countMetricButtonClick)
+    
+    function dateMetricButtonClick() {
+        drawHeatMapRects("date")
+        dateMetricButton.attr("class", "change-metric date active")
+        countMetricButton.attr("class", "change-metric count")
+    }
+
+    function countMetricButtonClick() {
+        drawHeatMapRects("count")
+        dateMetricButton.attr("class", "change-metric date")
+        countMetricButton.attr("class", "change-metric count active")
+    }
 
 }
 
