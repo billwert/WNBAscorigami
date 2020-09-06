@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace WNBAScorigami
 {
-    class Scraper
+    class BBRefScraper
     {
         private static Scorigami[,] Scorigamis = new Scorigami[150, 150];
         private static List<WnbaGame> allGames = new List<WnbaGame>(5000);
@@ -26,11 +26,11 @@ namespace WNBAScorigami
                 timings.Add(name, sw.Elapsed.TotalSeconds);
                 sw.Restart();
             }
-            await Scraper.LoadGameData();
+            await BBRefScraper.LoadGameData();
             reset("LoadGameData duration");
-            Scraper.CalculateScorigamis();
+            BBRefScraper.CalculateScorigamis();
             reset("CalculateScorigamis duration");
-            await Scraper.SaveGameData();
+            await BBRefScraper.SaveGameData();
             reset("SaveGameData duration");
             await WriteScorigamiData();
             // TODO: billwert: enable this functionality

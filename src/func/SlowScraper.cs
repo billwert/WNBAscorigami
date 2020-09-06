@@ -13,7 +13,7 @@ namespace WNBAScorigami
         [FunctionName("SlowScraper")]
         public static async Task Run([TimerTrigger("0 0 10 * * *")]TimerInfo myTimer, ILogger log)
         {
-            await Scraper.Run(log);
+            await BBRefScraper.Run(log);
             log.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
         }
     }
