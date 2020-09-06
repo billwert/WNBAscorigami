@@ -13,7 +13,6 @@ namespace WNBAScorigami
     {
         private static Scorigami[,] Scorigamis = new Scorigami[150, 150];
         private static List<WnbaGame> allGames = new List<WnbaGame>(5000);
-        private static Dictionary<string, int> scorigamiByTeam = new Dictionary<string, int>();
         private static HashSet<int> updatedYears = new HashSet<int>();
         private static Storage storage = new Storage("WNBAStorage", "leaguedata");
 
@@ -33,8 +32,7 @@ namespace WNBAScorigami
             await BBRefScraper.SaveGameData();
             reset("SaveGameData duration");
             await WriteScorigamiData();
-            // TODO: billwert: enable this functionality
-            // Scraper.TabulateTeamScorigamiCount(@"output_teamscorigamicount.txt");
+            await TabulateTeamScorigamiCount(@"output_teamscorigamicount.txt");
             // reset("TabulateTeamScorigamiCount duration");
             // Scraper.CalculateScorigamiByActivePlayer();
             // reset("CalculateScorigamiByActivePlayer duration");
@@ -223,61 +221,42 @@ namespace WNBAScorigami
             }
         }
 
-        // TODO: billwert: need this to show up in a json somewhere.
-        // public static void TabulateTeamScorigamiCount(string path)
-        // {
-        //     using var list = new StreamWriter("output_list.txt");
-        //     for (int i = 0; i < 150; i++)
-        //     {
-        //         for (int j = 0; j < 150; j++)
-        //         {
-        //             WnbaGame scoriGame = Scorigamis[i, j]?.First;
-        //             if (scoriGame == null)
-        //                 continue;
-        //             list.WriteLine(FormatGame(scoriGame));
-
-        //             // Some teams have moved and been renamed, their scorigamis stay with the franchise
-        //             string modernTeamName1 = LeagueInfo.GetModernTeamName(scoriGame.Away);
-        //             string modernTeamName2 = LeagueInfo.GetModernTeamName(scoriGame.Home);
-
-        //             if (scorigamiByTeam.ContainsKey(modernTeamName1))
-        //             {
-        //                 scorigamiByTeam[modernTeamName1]++;
-        //             }
-        //             else
-        //             {
-        //                 scorigamiByTeam.Add(modernTeamName1, 1);
-        //             }
-
-        //             if (scorigamiByTeam.ContainsKey(modernTeamName2))
-        //             {
-        //                 scorigamiByTeam[modernTeamName2]++;
-        //             }
-        //             else
-        //             {
-        //                 scorigamiByTeam.Add(modernTeamName2, 1);
-        //             }
-        //         }
-        //     }
-
-        //     using (StreamWriter sw = new StreamWriter(path))
-        //     {
-        //         foreach (var team in scorigamiByTeam)
-        //         {
-        //             sw.WriteLine("{0},{1}", team.Key, team.Value);
-        //         }
-        //     }
-        // }
-
-        private static string FormatGame(WnbaGame game)
+        public static async Task TabulateTeamScorigamiCount(string path)
         {
-            if (game == null)
+            var scorigamiByTeam = new Dictionary<string, int>();
+
+            for (int i = 0; i < 150; i++)
             {
-                return "<empty>";
+                for (int j = 0; j < 150; j++)
+                {
+                    WnbaGame scoriGame = Scorigamis[i, j]?.First;
+                    if (scoriGame == null)
+                        continue;
+
+                    // Some teams have moved and been renamed, their scorigamis stay with the franchise
+                    string modernTeamName1 = LeagueInfo.GetModernTeamName(scoriGame.Away);
+                    string modernTeamName2 = LeagueInfo.GetModernTeamName(scoriGame.Home);
+
+                    if (scorigamiByTeam.ContainsKey(modernTeamName1))
+                    {
+                        scorigamiByTeam[modernTeamName1]++;
+                    }
+                    else
+                    {
+                        scorigamiByTeam.Add(modernTeamName1, 1);
+                    }
+
+                    if (scorigamiByTeam.ContainsKey(modernTeamName2))
+                    {
+                        scorigamiByTeam[modernTeamName2]++;
+                    }
+                    else
+                    {
+                        scorigamiByTeam.Add(modernTeamName2, 1);
+                    }
+                }
             }
-            string gameStr = game.Away + " v " + game.Home;
-            string output = String.Format("{0},{1},{2},{3}", game.GameDate.ToString("yyyy-MM-dd"), gameStr, game.AwayScore, game.HomeScore);
-            return output;
+            await storage.UploadJson(JsonConvert.SerializeObject(scorigamiByTeam), "scorigami-by-team.json");
         }
 
         private static void AddGamesFromBBRef(List<WnbaGame> allGames, string seasonUrl)
