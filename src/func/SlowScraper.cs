@@ -8,9 +8,9 @@ using Microsoft.Extensions.Logging;
 
 namespace WNBAScorigami
 {
-    public static class Scrape
+    public static class SlowScraper
     {
-        [FunctionName("Scrape")]
+        [FunctionName("SlowScraper")]
         public static async Task Run([TimerTrigger("0 0 10 * * *")]TimerInfo myTimer, ILogger log)
         {
             await Scraper.Run(log);
