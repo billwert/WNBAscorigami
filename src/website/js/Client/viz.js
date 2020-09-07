@@ -104,6 +104,8 @@ async function drawScorigamiViz() {
         .attr("fill", "white")
         .on("mouseenter", onMouseEnterBlankspace)
         .on("mouseleave", onMouseLeaveBlankspace)
+        .on("touchstart", onMouseEnterBlankspace)
+        .on("touchmove", onMouseEnterBlankspace)
     
     // 5a. Heatmap recs
     function drawHeatMapRects(metric) {
@@ -130,6 +132,8 @@ async function drawScorigamiViz() {
             .attr("fill", d => colorScale(colorAccessor(d)))
             .on("mouseenter", onMouseEnter)
             .on("mouseleave", onMouseLeave)
+            .on("touchstart", onMouseEnter)
+            .on("touchmove", onMouseEnter)
 
         var legendMinLabel = ""
         var legendMaxLabel = ""
@@ -238,6 +242,9 @@ async function drawScorigamiViz() {
     const tooltip = d3.select(".tooltip")
 
     function onMouseEnter(event, datum) {
+        cleanupTooltip()
+        cleanupBlankspaceTooltip()
+
         const activescorigami = bounds.append("rect")
             .attr("class", "activescorigami")
             .attr("x", d => xScale(xAccessor(datum)))
@@ -273,6 +280,10 @@ async function drawScorigamiViz() {
     }
 
     function onMouseLeave() {
+        cleanupTooltip()
+    }
+
+    function cleanupTooltip() {
         d3.selectAll(".activescorigami")
             .remove()
         tooltip.style("opacity", 0)
@@ -281,6 +292,9 @@ async function drawScorigamiViz() {
     const possiblescoreindicator = d3.select(".possiblescoreindicator")
 
     function onMouseEnterBlankspace(event, datum) {
+        cleanupBlankspaceTooltip()
+        cleanupTooltip()
+
         const activeblankspace = bounds.append("rect")
             .attr("class", "activeblankspace")
             .attr("x", d => xScale(xAccessor(datum)))
@@ -304,10 +318,30 @@ async function drawScorigamiViz() {
     }
 
     function onMouseLeaveBlankspace() {
+        cleanupBlankspaceTooltip()
+    }
+
+    function cleanupBlankspaceTooltip() {
         d3.selectAll(".activeblankspace")
             .remove()
         possiblescoreindicator.style("opacity", 0)
     }
+
+    // Clear both tooltips when you tap outside 
+    d3.select("header").on("touchstart", () => {
+        cleanupTooltip()
+        cleanupBlankspaceTooltip()
+    })
+
+    d3.select(".controls").on("touchstart", () => {
+        cleanupTooltip()
+        cleanupBlankspaceTooltip()
+    })
+
+    d3.selectAll(".impossiblescores").on("touchstart", () => {
+        cleanupTooltip()
+        cleanupBlankspaceTooltip()
+    })
 
     // Change metric buttons
     dateMetricButton = d3.select(".change-metric.date")
