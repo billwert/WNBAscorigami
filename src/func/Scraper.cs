@@ -11,28 +11,30 @@ namespace WNBAScorigami
 {
     class Scraper
     {
-        private static Scorigami[,] Scorigamis = new Scorigami[150, 150];
-        private static List<WnbaGame> allGames = new List<WnbaGame>(5000);
-        private static Dictionary<string, int> scorigamiByTeam = new Dictionary<string, int>();
-        private static HashSet<int> updatedYears = new HashSet<int>();
-        private static Storage storage = new Storage("WNBAStorage", "leaguedata");
+        private Scorigami[,] Scorigamis = new Scorigami[150, 150];
+        private List<WnbaGame> allGames = new List<WnbaGame>(5000);
+        private Dictionary<string, int> scorigamiByTeam = new Dictionary<string, int>();
+        private HashSet<int> updatedYears = new HashSet<int>();
+        private Storage storage; 
 
         public static async Task Run(ILogger log)
         {
+            var scraper = new Scraper();
+            scraper.storage = new Storage("WNBAStorage", Environment.GetEnvironmentVariable("DEBUGCONTAINER") ?? "leaguedata");
             Stopwatch sw = Stopwatch.StartNew();
             var timings = new Dictionary<string, double>();
             void reset(string name)
             {
                 timings.Add(name, sw.Elapsed.TotalSeconds);
                 sw.Restart();
-            }
-            await Scraper.LoadGameData();
+            };
+            await scraper.LoadGameData();
             reset("LoadGameData duration");
-            Scraper.CalculateScorigamis();
+            scraper.CalculateScorigamis();
             reset("CalculateScorigamis duration");
-            await Scraper.SaveGameData();
+            await scraper.SaveGameData();
             reset("SaveGameData duration");
-            await WriteScorigamiData();
+            await scraper.WriteScorigamiData();
             // TODO: billwert: enable this functionality
             // Scraper.TabulateTeamScorigamiCount(@"output_teamscorigamicount.txt");
             // reset("TabulateTeamScorigamiCount duration");
@@ -44,7 +46,7 @@ namespace WNBAScorigami
             }
         }
 
-        private async static Task WriteScorigamiData()
+        private async Task WriteScorigamiData()
         {
             var data = new List<ScorigamiData>();
             for(int i = 0; i < 150; i++)
@@ -118,7 +120,7 @@ namespace WNBAScorigami
         //     }
 
         // }
-        public async static Task SaveGameData()
+        public async Task SaveGameData()
         {
             foreach (var year in updatedYears)
             {
@@ -126,20 +128,20 @@ namespace WNBAScorigami
             }
         }
 
-        private async static Task SaveYear(List<WnbaGame> games)
+        private async Task SaveYear(List<WnbaGame> games)
         {
             string json = JsonConvert.SerializeObject(games);
             await storage.UploadJson(json, GameFileName(games.First().Year));
         }
 
-        private async static Task<List<WnbaGame>> LoadYear(int year)
+        private async Task<List<WnbaGame>> LoadYear(int year)
         {
             var json = await storage.DownloadJson(GameFileName(year));
             return JsonConvert.DeserializeObject<List<WnbaGame>>(json);
         }
 
         private static string GameFileName(int year) => $"{year}_games.json";
-        public async static Task LoadGameData()
+        public async Task LoadGameData()
         {
             var scheduleURLFormat = @"https://www.basketball-reference.com/wnba/years/{0}-schedule.html";
 
@@ -187,7 +189,7 @@ namespace WNBAScorigami
             return playerNames;
         }
 
-        private static void UpdateGame(WnbaGame game, ScorigamiType type)
+        private void UpdateGame(WnbaGame game, ScorigamiType type)
         {
             if (game.ScorigamiType == ScorigamiType.None)
             {
@@ -197,7 +199,7 @@ namespace WNBAScorigami
             }
         }
 
-        public static void CalculateScorigamis()
+        public void CalculateScorigamis()
         {
             foreach (var game in allGames)
             {
@@ -387,7 +389,6 @@ namespace WNBAScorigami
     {
         public static readonly int START_YEAR = 1997;
         private static List<string> activePlayers = null;
-        public const string DATA_DIRECTORY = @"datacache";
 
         public static List<WnbaTeam> Teams { get; } = new List<WnbaTeam>()
         {

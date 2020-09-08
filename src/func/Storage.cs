@@ -9,9 +9,9 @@ namespace WNBAScorigami
 {
     class Storage
     {
-        private static string blobConnectionString;
-        private static BlobServiceClient serviceClient;
-        private static BlobContainerClient containerClient;
+        private string blobConnectionString;
+        private BlobServiceClient serviceClient;
+        private BlobContainerClient containerClient;
 
         public Storage(string secret, string container)
         {
