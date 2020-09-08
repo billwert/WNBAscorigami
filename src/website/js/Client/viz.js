@@ -9,12 +9,7 @@ async function drawScorigamiViz() {
     const xAccessor = d => d.pts_lose
     const dateAccessor = d => new Date(d.first_date)
 
-    // This is the code to fix the broken count data.
-    const countMin = d3.min(games, d => d.count)
-    const isCountMinOne = countMin === 1
-    const countAccessor = d => isCountMinOne ? d.count : d.count / countMin
-    // Replace above 3 lines with the below line when data is fixed
-    // const countAccessor = d => d.count
+    const countAccessor = d => d.count
     
     var currentMetric = "date"
 
