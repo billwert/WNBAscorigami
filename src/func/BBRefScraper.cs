@@ -33,9 +33,9 @@ namespace WNBAScorigami
             reset("SaveGameData duration");
             await WriteScorigamiData();
             await TabulateTeamScorigamiCount(@"output_teamscorigamicount.txt");
-            // reset("TabulateTeamScorigamiCount duration");
-            // Scraper.CalculateScorigamiByActivePlayer();
-            // reset("CalculateScorigamiByActivePlayer duration");
+            reset("TabulateTeamScorigamiCount duration");
+            await CalculateScorigamiByActivePlayer();
+            reset("CalculateScorigamiByActivePlayer duration");
             foreach (var kvp in timings)
             {
                 log.LogInformation($"{kvp.Key} duration: {kvp.Value}");
@@ -78,44 +78,36 @@ namespace WNBAScorigami
             await storage.UploadJson(json, "scorigamidata.json");
         }
 
-        // TODO: billwert: need this to show up in a json somewhere.
-        // public static void CalculateScorigamiByActivePlayer()
-        // {
-        //     Dictionary<string, int> scorigamiPerPlayer = new Dictionary<string, int>();
-        //     foreach (var player in LeagueInfo.GetActivePlayerList())
-        //     {
-        //         scorigamiPerPlayer.Add(player, 0);
-        //     }
+        public static async Task CalculateScorigamiByActivePlayer()
+        {
+            Dictionary<string, int> scorigamiPerPlayer = new Dictionary<string, int>();
+            var playerList = await LeagueInfo.GetActivePlayerList();
+            foreach (var player in playerList)
+            {
+                scorigamiPerPlayer.TryAdd($"{player.FirstName} {player.LastName}", 0);
+            }
 
-        //     for(int i = 0; i < 150; i++)
-        //     {
-        //         for (int j = 0; j < 150; j++)
-        //         {
-        //             var game = Scorigamis[i, j]?.First;
-        //             if (game == null)
-        //                 continue;
+            for(int i = 0; i < 150; i++)
+            {
+                for (int j = 0; j < 150; j++)
+                {
+                    var game = Scorigamis[i, j]?.First;
+                    if (game == null)
+                        continue;
 
 
-        //             foreach (var player in game.Players)
-        //             {
-        //                 if (scorigamiPerPlayer.ContainsKey(player))
-        //                 {
+                    foreach (var player in game.Players)
+                    {
+                        if (scorigamiPerPlayer.ContainsKey(player))
+                        {
 
-        //                     scorigamiPerPlayer[player]++;
-        //                 }
-        //             }
-        //         }
-        //     }
-
-        //     using (var sw = new StreamWriter(Path.Join(LeagueInfo.DATA_DIRECTORY, @"output_playerScorigamis.txt")))
-        //     {
-        //         foreach (var kvp in scorigamiPerPlayer)
-        //         {
-        //             sw.WriteLine("{0},{1}", kvp.Key, kvp.Value);
-        //         }
-        //     }
-
-        // }
+                            scorigamiPerPlayer[player]++;
+                        }
+                    }
+                }
+            }
+            await storage.UploadJson(JsonConvert.SerializeObject(scorigamiPerPlayer), "scorigami-per-player.json");
+        }
         public async static Task SaveGameData()
         {
             foreach (var year in updatedYears)

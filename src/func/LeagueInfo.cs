@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace WNBAScorigami
 {
     static class LeagueInfo
     {
         public static readonly int START_YEAR = 1997;
-        private static List<string> activePlayers = null;
+        private static List<Player> activePlayers = null;
         public const string DATA_DIRECTORY = @"datacache";
 
         public static List<WnbaTeam> Teams { get; } = new List<WnbaTeam>()
@@ -40,19 +43,21 @@ namespace WNBAScorigami
             {"Utah Starzz", "Las Vegas Aces" },
 
         };
-        // public static List<string> GetActivePlayerList()
-        // {
-        //     if (activePlayers != null)
-        //         return activePlayers;
+        public static async Task<List<Player>> GetActivePlayerList()
+        {
+            if (activePlayers != null)
+                return activePlayers;
 
-        //     activePlayers = new List<string>();
-        //     foreach (var line in File.ReadAllLines(Path.Join(DATA_DIRECTORY, @"activePlayerList.txt")))
-        //     {
-        //         activePlayers.Add(line);
-        //     }
-
-        //     return activePlayers;
-        // }
+            WebClient wc = new WebClient();
+            var json = await wc.DownloadStringTaskAsync("https://data.wnba.com/data/5s/v2015/json/mobile_teams/wnba/2020/players/10_player_info.json");
+            var playerHash = new HashSet<Player>();
+            foreach(var player in JsonConvert.DeserializeObject<PlayerRoot>(json).PlayerList.Players)
+            {
+                playerHash.Add(player);
+            }
+            activePlayers = new List<Player>(playerHash);
+            return activePlayers;
+        }
         public static string GetShortName(string teamName)
         {
             return GetShortName(teamName, DateTime.Now);
