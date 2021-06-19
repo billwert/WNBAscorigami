@@ -5,7 +5,8 @@ on:
     branches: [ main ]
     paths:
       - src/func/**
-  
+  workflow_dispatch:
+    
 
 jobs:
   build:
