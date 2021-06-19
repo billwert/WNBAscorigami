@@ -143,7 +143,7 @@ namespace WNBAScorigami
         private static string GameFileName(int year) => $"{year}_games.json";
         public async Task LoadGameData()
         {
-            var scheduleURLFormat = @"https://www.basketball-reference.com/wnba/years/{0}-schedule.html";
+            var scheduleURLFormat = @"https://www.basketball-reference.com/wnba/years/{0}_games.html";
 
             // Add all years of games. We look for a json blob first then pull from bbref.
             // For the current year we always pull from bbref as there may be new games to add.
@@ -173,7 +173,7 @@ namespace WNBAScorigami
             var playerNames = new List<string>();
 
             // "//*[@id=\"box-score-nyl\"]/tbody/tr[1]/th/a"
-            var nodes = doc.DocumentNode.SelectNodes("//*[starts-with(@id,\"box-score\")]/tbody/tr//a");
+            var nodes = doc.DocumentNode.SelectNodes("//*[contains(@id,\"game-basic\")]/tbody/tr//a");
 
             // https://www.basketball-reference.com/wnba/boxscores/201808030WAS.html this game is fucked for some reason 
             if (nodes == null)
