@@ -111,7 +111,7 @@ namespace WNBAScorigami
         //         }
         //     }
 
-        //     using (var sw = new StreamWriter(Path.Join(LeagueInfo.DATA_DIRECTORY, @"output_playerScorigamis.txt")))
+            //     using (var sw = new StreamWriter(Path.Join(LeagueInfo.DATA_DIRECTORY, @"output_playerScorigamis.txt")))
         //     {
         //         foreach (var kvp in scorigamiPerPlayer)
         //         {
@@ -160,7 +160,10 @@ namespace WNBAScorigami
                     string scheduleURL = String.Format(scheduleURLFormat, i.ToString());
                     List<WnbaGame> seasonOfGames = new List<WnbaGame>();
                     AddGamesFromBBRef(seasonOfGames, scheduleURL);
-                    await SaveYear(seasonOfGames);
+                    if(seasonOfGames.Count != 0)
+                    {
+                        await SaveYear(seasonOfGames);
+                    }
                     allGames.AddRange(seasonOfGames);
                 }
             }
