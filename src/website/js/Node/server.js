@@ -23,7 +23,7 @@ console.log(DATA_URL);
 
 app.use(express.static(__dirname + "/../.."));
 
-var retdata;
+var retdata; // this is the cache from the hourly update.
 
 async function getData()
 {
