@@ -6,17 +6,10 @@
 	"scripts": {
 		"start": "node js/Node/server.js"
 	},
-	"author": "Andrew Merriman",
 	"license": "MIT",
 	"dependencies": {
-		"d3": "^6.0.0",
-		"dotenv": "^4.0.0",
 		"express": "^4.15.4",
 		"heroku-ssl-redirect": "0.0.4",
-		"pg": "^7.3.0",
 		"request": "^2.82.0"
-	},
-	"devDependencies": {
-		"jshint": "^2.9.5"
 	}
 }
