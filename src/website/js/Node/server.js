@@ -4,9 +4,14 @@ var express = require("express");
 var app = express();
 var path = require("path");
 var request = require("request");
-var sslRedirect = require('heroku-ssl-redirect');
 
-app.use(sslRedirect())
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'production' && req.header('x-forwarded-proto') !== 'https') {
+    res.redirect(`https://${req.header('host')}${req.url}`);
+  } else {
+    next();
+  }
+});
 
 
 var DATA_URL = process.env.DATA_URL;

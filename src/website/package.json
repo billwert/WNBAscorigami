@@ -8,8 +8,7 @@
 	},
 	"license": "MIT",
 	"dependencies": {
-		"express": "^4.15.4",
-		"heroku-ssl-redirect": "0.0.4",
+		"express": "^4.22.1",
 		"request": "^2.82.0"
 	}
 }
