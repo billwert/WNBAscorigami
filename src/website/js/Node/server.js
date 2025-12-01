@@ -3,10 +3,14 @@
 var express = require("express");
 var app = express();
 var path = require("path");
-var request = require("request");
-var sslRedirect = require('heroku-ssl-redirect');
 
-app.use(sslRedirect())
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV === 'production' && req.header('x-forwarded-proto') !== 'https') {
+    res.redirect(`https://${req.header('host')}${req.url}`);
+  } else {
+    next();
+  }
+});
 
 
 var DATA_URL = process.env.DATA_URL;
@@ -19,9 +23,9 @@ console.log(DATA_URL);
 
 app.use(express.static(__dirname + "/../.."));
 
-var retdata;
+var retdata; // this is the cache from the hourly update.
 
-function getData()
+async function getData()
 {
 	/*
 	pts_win
@@ -41,28 +45,26 @@ function getData()
 	last_link
 	*/
 
-	request(DATA_URL, function(err, res, data)
-	{
-		if(!err)
-		{
-			retdata = JSON.parse(data);
-
+	try {
+		const response = await fetch(DATA_URL);
+		if (!response.ok) {
+			throw new Error(`HTTP error! status: ${response.status}`);
 		}
-		else
-		{
-			console.log("There was an error getting data");
-			throw err;
-		}
-		//renderPage();
-	});
+		retdata = await response.json();
+	}
+	catch (err) {
+		console.log("There was an error getting data");
+		console.error(err);
+		throw err;
+	}
 }
 
-function tick()
+async function tick()
 {
-	getData();
+	await getData();
 }
 
-tick();
+tick().catch(err => console.error("Failed to fetch initial data:", err));
 
 setInterval(tick, 1000 * 60 * 60); // hourly
 	
