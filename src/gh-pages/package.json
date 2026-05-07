@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "prestart": "cp ../data/scorigamidata.json .",
+    "start": "npx serve . --listen 8082"
+  }
+}

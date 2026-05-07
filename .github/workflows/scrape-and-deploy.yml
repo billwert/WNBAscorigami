@@ -1,0 +1,72 @@
+name: Scrape and Deploy
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  push:
+    branches: [gh-pages-port]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.x'
+
+      - name: Run scraper
+        run: dotnet run --project src/gh-scraper/gh-scraper.csproj -- --data-dir src/data
+
+      - name: Commit updated data
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/data/
+          git diff --staged --quiet || (git commit -m "chore: update scorigami data [skip ci]" && git push)
+
+  deploy:
+    needs: scrape
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Pull latest data
+        run: git pull
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp -r src/gh-pages/. _site/
+          cp src/data/scorigamidata.json _site/scorigamidata.json
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

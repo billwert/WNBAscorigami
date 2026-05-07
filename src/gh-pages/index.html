@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WNBA Scorigami</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/main.css"></link>
+	<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+</head>
+<body>
+	<header><h1><span class="emphasize">WNBA</span>Scorigami</h1></header>
+	<main>
+		<div class="viz">
+			<div class="tooltip">
+				<div class="score">
+					<h3>Score</h3>
+					<div class="scorenumbers">
+						<span id="tooltip-winningscore"></span> - <span id="tooltip-losingscore"></span>
+					</div>
+					<div class="teams">
+						<h3>First game</h3>
+						<div class="firstgame">
+							<span id="tooltip-firstgamewinningteam"></span> vs <span id="tooltip-firstgamelosingteam"></span>
+						</div>
+						<h3>Latest game</h3>
+						<div class="latestgame">
+							<span id="tooltip-latestgamewinningteam"></span> vs <span id="tooltip-latestgamelosingteam"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="possiblescoreindicator">
+				<span id="possiblescoreindicator-winningscore"></span> - <span id="possiblescoreindicator-losingscore"></span>
+			</div>
+
+			<div class="statsbox">
+				<div class="stat"><h3>Scorigami count</h3><span class="totalnumberofscorigamis"></span></div>
+				<div class="stat"><h3>Most recent Scorigami</h3><span id="mostrecentwiningteam"></span> - <span id="mostrecentlosingteam"></span><br /><span class="mostrecentscorigami"></span></div>
+			</div>
+		</div>
+
+		<div class="controls">
+			<div class="buttons-wrapper">
+				<h5>Color squares by</h5>
+				<div>
+					<button class="change-metric date active">Date</button>
+					<button class="change-metric count">Count</button>
+				</div>
+			</div>
+			<div class="legend-wrapper">
+				<h5><span class="legend-title">Year of original scorigami game</span></h5>
+				<div class="legend">
+					<div class="legend-text" id="legend-min"></div>
+					<div class="legend-gradient" id="legend-gradient"></div>
+					<div class="legend-text" id="legend-max"></div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="faq">
+			<h2>FAQ</h2>
+			<h3>What is Scorigami?</h3>
+			<p>Scorigami is a concept thought up by Jon Bois. A Scorigami is a final score that has never happend before. For more info, check out <a href="https://www.youtube.com/watch?v=9l5C8cGMueY">this video made by Jon Bois about Scorigami</a>.</p>
+			<h3>How do I read this chart?</h3>
+			<p>The winning team's score is along the left (vertical axis) and the losing team's score is along the bottom (horizontal axis). Scores marked in orange have happened, scores in white have not yet happened, scores in grey are impossible. You can hover on a cell to get more info.</p>
+		</div>
+	</footer>
+	<div class="reference-wrapper">
+		<div class="reference">
+			<div>
+			Site inspired by <a href="https://nflscorigami.com/">https://nflscorigami.com/</a><br/> Historical Data from <a href="https://www.basketball-reference.com/wnba/">Basketball Reference</a>
+			</div>
+			<div>
+				<div class="twitter"><a href="https://twitter.com/ScorigamiWNBA"><img src="./images/twitter-logo.svg" /></a></div>
+			</div>
+		</div>
+	</div>
+	<script src="./js/viz.js"></script>
+</body>
+</html>
