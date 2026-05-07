@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '0 * * * *'
   push:
-    branches: [gh-pages-port]
+    branches: [gh-pages-port, main]
   workflow_dispatch:
 
 permissions:
@@ -29,6 +29,9 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Run scraper
+        env:
+          BLUESKY_IDENTIFIER: ${{ secrets.BLUESKY_IDENTIFIER }}
+          BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
         run: dotnet run --project src/gh-scraper/gh-scraper.csproj -- --data-dir src/data
 
       - name: Commit updated data

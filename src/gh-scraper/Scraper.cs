@@ -9,7 +9,7 @@ class Scraper
     private readonly List<WnbaGame> allGames = new(5000);
     private string dataDir = "data";
 
-    public static void Run(string dataDir)
+    public static List<ScorigamiData> Run(string dataDir)
     {
         var scraper = new Scraper { dataDir = dataDir };
 
@@ -23,11 +23,12 @@ class Scraper
         Console.WriteLine($"CalculateScorigamis: {sw.Elapsed.TotalSeconds:F2}s");
         sw.Restart();
 
-        scraper.WriteScorigamiData();
+        var result = scraper.WriteScorigamiData();
         Console.WriteLine($"WriteScorigamiData: {sw.Elapsed.TotalSeconds:F2}s");
+        return result;
     }
 
-    private void WriteScorigamiData()
+    private List<ScorigamiData> WriteScorigamiData()
     {
         var data = new List<ScorigamiData>();
         for (int i = 0; i < 150; i++)
@@ -66,6 +67,7 @@ class Scraper
         var path = Path.Join(dataDir, "scorigamidata.json");
         File.WriteAllText(path, json);
         Console.WriteLine($"Wrote {data.Count} scorigami records to {path}");
+        return data;
     }
 
     private void SaveYear(List<WnbaGame> games)
