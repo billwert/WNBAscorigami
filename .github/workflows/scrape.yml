@@ -2,7 +2,7 @@ name: Scrape and Deploy
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '17 * * * *'
   push:
     branches: [gh-pages-port, main]
   workflow_dispatch:
