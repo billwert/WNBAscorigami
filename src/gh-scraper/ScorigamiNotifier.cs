@@ -66,7 +66,7 @@ static class ScorigamiNotifier
     }
 
     private static string FormatPost(ScorigamiData s, int rank) =>
-        $"SCORIGAMI!!!\n\nWith a score of {s.pts_win} - {s.pts_lose} the {s.first_team_win} and {s.first_team_lose} have completed the {Ordinal(rank)} scorigami in league history.\n\n#WNBA";
+        $"SCORIGAMI!!!\n\nWith a score of {s.pts_win} - {s.pts_lose} the {s.first_team_win} and {s.first_team_lose} have completed the {Ordinal(rank-1)} scorigami in league history.\n\n#WNBA";
 
     private static string Ordinal(int n) =>
         (n % 100 is 11 or 12 or 13)
