@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "prestart": "cp ../data/scorigamidata.json .",
+    "prestart": "node -e \"require('fs').copyFileSync('../data/scorigamidata.json', 'scorigamidata.json')\"",
     "start": "npx serve . --listen 8082"
   }
 }
