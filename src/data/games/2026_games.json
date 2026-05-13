@@ -163,5 +163,50 @@
     "WinTeam": "New York Liberty",
     "LoseScore": 93,
     "LoseTeam": "Washington Mystics"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-12T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "Dallas Wings",
+    "AwayScore": 77,
+    "HomeScore": 72,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605120DAL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 77,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 72,
+    "LoseTeam": "Dallas Wings"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-12T00:00:00",
+    "Away": "New York Liberty",
+    "Home": "Portland Fire",
+    "AwayScore": 96,
+    "HomeScore": 98,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605120PDX.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 98,
+    "WinTeam": "Portland Fire",
+    "LoseScore": 96,
+    "LoseTeam": "New York Liberty"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-12T00:00:00",
+    "Away": "Minnesota Lynx",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 88,
+    "HomeScore": 84,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605120PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 88,
+    "WinTeam": "Minnesota Lynx",
+    "LoseScore": 84,
+    "LoseTeam": "Phoenix Mercury"
   }
 ]
