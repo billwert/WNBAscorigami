@@ -268,5 +268,35 @@
     "WinTeam": "Toronto Tempo",
     "LoseScore": 73,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-14T00:00:00",
+    "Away": "Minnesota Lynx",
+    "Home": "Dallas Wings",
+    "AwayScore": 90,
+    "HomeScore": 86,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605140DAL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 90,
+    "WinTeam": "Minnesota Lynx",
+    "LoseScore": 86,
+    "LoseTeam": "Dallas Wings"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-14T00:00:00",
+    "Away": "New York Liberty",
+    "Home": "Portland Fire",
+    "AwayScore": 100,
+    "HomeScore": 82,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605140PDX.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 100,
+    "WinTeam": "New York Liberty",
+    "LoseScore": 82,
+    "LoseTeam": "Portland Fire"
   }
 ]
