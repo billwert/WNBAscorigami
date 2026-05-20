@@ -448,5 +448,20 @@
     "WinTeam": "Portland Fire",
     "LoseScore": 82,
     "LoseTeam": "Connecticut Sun"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-19T00:00:00",
+    "Away": "Toronto Tempo",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 98,
+    "HomeScore": 90,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605190PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 98,
+    "WinTeam": "Toronto Tempo",
+    "LoseScore": 90,
+    "LoseTeam": "Phoenix Mercury"
   }
 ]
