@@ -508,5 +508,50 @@
     "WinTeam": "Connecticut Sun",
     "LoseScore": 78,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-21T00:00:00",
+    "Away": "Toronto Tempo",
+    "Home": "Minnesota Lynx",
+    "AwayScore": 72,
+    "HomeScore": 100,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605210MIN.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 100,
+    "WinTeam": "Minnesota Lynx",
+    "LoseScore": 72,
+    "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-21T00:00:00",
+    "Away": "Golden State Valkyries",
+    "Home": "New York Liberty",
+    "AwayScore": 87,
+    "HomeScore": 70,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605210NYL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 87,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 70,
+    "LoseTeam": "New York Liberty"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-21T00:00:00",
+    "Away": "Los Angeles Sparks",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 97,
+    "HomeScore": 88,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605210PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 97,
+    "WinTeam": "Los Angeles Sparks",
+    "LoseScore": 88,
+    "LoseTeam": "Phoenix Mercury"
   }
 ]
