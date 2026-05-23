@@ -553,5 +553,50 @@
     "WinTeam": "Los Angeles Sparks",
     "LoseScore": 88,
     "LoseTeam": "Phoenix Mercury"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-22T00:00:00",
+    "Away": "Dallas Wings",
+    "Home": "Atlanta Dream",
+    "AwayScore": 69,
+    "HomeScore": 86,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605220ATL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 86,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 69,
+    "LoseTeam": "Dallas Wings"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-22T00:00:00",
+    "Away": "Golden State Valkyries",
+    "Home": "Indiana Fever",
+    "AwayScore": 82,
+    "HomeScore": 90,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605220IND.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 90,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 82,
+    "LoseTeam": "Golden State Valkyries"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-22T00:00:00",
+    "Away": "Connecticut Sun",
+    "Home": "Seattle Storm",
+    "AwayScore": 59,
+    "HomeScore": 77,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605220SEA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 77,
+    "WinTeam": "Seattle Storm",
+    "LoseScore": 59,
+    "LoseTeam": "Connecticut Sun"
   }
 ]
