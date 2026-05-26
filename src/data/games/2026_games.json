@@ -688,5 +688,35 @@
     "WinTeam": "Seattle Storm",
     "LoseScore": 85,
     "LoseTeam": "Washington Mystics"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-25T00:00:00",
+    "Away": "Connecticut Sun",
+    "Home": "Golden State Valkyries",
+    "AwayScore": 70,
+    "HomeScore": 97,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605250GSV.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 97,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 70,
+    "LoseTeam": "Connecticut Sun"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-25T00:00:00",
+    "Away": "Portland Fire",
+    "Home": "New York Liberty",
+    "AwayScore": 81,
+    "HomeScore": 74,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605250NYL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 81,
+    "WinTeam": "Portland Fire",
+    "LoseScore": 74,
+    "LoseTeam": "New York Liberty"
   }
 ]
