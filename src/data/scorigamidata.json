@@ -14674,19 +14674,19 @@
     {
       "pts_win": 90,
       "pts_lose": 88,
-      "count": 7,
+      "count": 8,
       "first_date": "2013-08-25T00:00:00",
       "first_team_win": "Los Angeles Sparks",
       "first_team_lose": "Tulsa Shock",
       "first_team_home": "Los Angeles Sparks",
       "first_team_away": "Tulsa Shock",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/201308250LAS.html",
-      "last_date": "2025-10-08T00:00:00",
-      "last_team_win": "Las Vegas Aces",
-      "last_team_lose": "Phoenix Mercury",
-      "last_team_home": "Phoenix Mercury",
-      "last_team_away": "Las Vegas Aces",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202510080PHO.html"
+      "last_date": "2026-05-28T00:00:00",
+      "last_team_win": "Golden State Valkyries",
+      "last_team_lose": "Indiana Fever",
+      "last_team_home": "Golden State Valkyries",
+      "last_team_away": "Indiana Fever",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202605280GSV.html"
     },
     {
       "pts_win": 90,
@@ -17326,19 +17326,19 @@
     {
       "pts_win": 95,
       "pts_lose": 87,
-      "count": 4,
+      "count": 5,
       "first_date": "2015-06-20T00:00:00",
       "first_team_win": "Chicago Sky",
       "first_team_lose": "San Antonio Silver Stars",
       "first_team_home": "San Antonio Silver Stars",
       "first_team_away": "Chicago Sky",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/201506200SAS.html",
-      "last_date": "2023-07-12T00:00:00",
-      "last_team_win": "New York Liberty",
-      "last_team_lose": "Indiana Fever",
-      "last_team_home": "Indiana Fever",
-      "last_team_away": "New York Liberty",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202307120IND.html"
+      "last_date": "2026-05-28T00:00:00",
+      "last_team_win": "Dallas Wings",
+      "last_team_lose": "Las Vegas Aces",
+      "last_team_home": "Dallas Wings",
+      "last_team_away": "Las Vegas Aces",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202605280DAL.html"
     },
     {
       "pts_win": 95,
@@ -23937,5 +23937,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-05-29T08:52:21.0339204Z"
+  "lastUpdated": "2026-05-29T12:27:35.2161407Z"
 }

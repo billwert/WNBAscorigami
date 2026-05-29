@@ -793,5 +793,35 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 64,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-28T00:00:00",
+    "Away": "Las Vegas Aces",
+    "Home": "Dallas Wings",
+    "AwayScore": 87,
+    "HomeScore": 95,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605280DAL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 95,
+    "WinTeam": "Dallas Wings",
+    "LoseScore": 87,
+    "LoseTeam": "Las Vegas Aces"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-05-28T00:00:00",
+    "Away": "Indiana Fever",
+    "Home": "Golden State Valkyries",
+    "AwayScore": 88,
+    "HomeScore": 90,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202605280GSV.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 90,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 88,
+    "LoseTeam": "Indiana Fever"
   }
 ]
