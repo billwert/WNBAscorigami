@@ -1033,5 +1033,35 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 72,
     "LoseTeam": "Chicago Sky"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-03T00:00:00",
+    "Away": "Toronto Tempo",
+    "Home": "New York Liberty",
+    "AwayScore": 82,
+    "HomeScore": 97,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606030NYL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 97,
+    "WinTeam": "New York Liberty",
+    "LoseScore": 82,
+    "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-03T00:00:00",
+    "Away": "Phoenix Mercury",
+    "Home": "Seattle Storm",
+    "AwayScore": 72,
+    "HomeScore": 68,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606030SEA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 72,
+    "WinTeam": "Phoenix Mercury",
+    "LoseScore": 68,
+    "LoseTeam": "Seattle Storm"
   }
 ]
