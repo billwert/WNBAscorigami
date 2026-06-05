@@ -1063,5 +1063,35 @@
     "WinTeam": "Phoenix Mercury",
     "LoseScore": 68,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-04T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "Indiana Fever",
+    "AwayScore": 71,
+    "HomeScore": 83,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606040IND.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 83,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 71,
+    "LoseTeam": "Atlanta Dream"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-04T00:00:00",
+    "Away": "Golden State Valkyries",
+    "Home": "Minnesota Lynx",
+    "AwayScore": 84,
+    "HomeScore": 87,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606040MIN.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 87,
+    "WinTeam": "Minnesota Lynx",
+    "LoseScore": 84,
+    "LoseTeam": "Golden State Valkyries"
   }
 ]

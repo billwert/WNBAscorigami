@@ -10679,19 +10679,19 @@
     {
       "pts_win": 83,
       "pts_lose": 71,
-      "count": 7,
+      "count": 8,
       "first_date": "2003-06-30T00:00:00",
       "first_team_win": "Seattle Storm",
       "first_team_lose": "Charlotte Sting",
       "first_team_home": "Charlotte Sting",
       "first_team_away": "Seattle Storm",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200306300CHA.html",
-      "last_date": "2025-08-10T00:00:00",
-      "last_team_win": "Minnesota Lynx",
-      "last_team_lose": "New York Liberty",
-      "last_team_home": "New York Liberty",
-      "last_team_away": "Minnesota Lynx",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202508100NYL.html"
+      "last_date": "2026-06-04T00:00:00",
+      "last_team_win": "Indiana Fever",
+      "last_team_lose": "Atlanta Dream",
+      "last_team_home": "Indiana Fever",
+      "last_team_away": "Atlanta Dream",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606040IND.html"
     },
     {
       "pts_win": 83,
@@ -12940,19 +12940,19 @@
     {
       "pts_win": 87,
       "pts_lose": 84,
-      "count": 13,
+      "count": 14,
       "first_date": "1997-08-07T00:00:00",
       "first_team_win": "Los Angeles Sparks",
       "first_team_lose": "Cleveland Rockers",
       "first_team_home": "Cleveland Rockers",
       "first_team_away": "Los Angeles Sparks",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/199708070CLE.html",
-      "last_date": "2025-09-06T00:00:00",
-      "last_team_win": "Connecticut Sun",
-      "last_team_lose": "Phoenix Mercury",
-      "last_team_home": "Connecticut Sun",
-      "last_team_away": "Phoenix Mercury",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202509060CON.html"
+      "last_date": "2026-06-04T00:00:00",
+      "last_team_win": "Minnesota Lynx",
+      "last_team_lose": "Golden State Valkyries",
+      "last_team_home": "Minnesota Lynx",
+      "last_team_away": "Golden State Valkyries",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606040MIN.html"
     },
     {
       "pts_win": 87,
@@ -23954,5 +23954,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-06-05T08:53:07.7568333Z"
+  "lastUpdated": "2026-06-05T12:19:56.9388498Z"
 }
