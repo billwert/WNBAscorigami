@@ -1198,5 +1198,35 @@
     "WinTeam": "New York Liberty",
     "LoseScore": 75,
     "LoseTeam": "Indiana Fever"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-07T00:00:00",
+    "Away": "Portland Fire",
+    "Home": "Los Angeles Sparks",
+    "AwayScore": 72,
+    "HomeScore": 89,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606070LAS.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 89,
+    "WinTeam": "Los Angeles Sparks",
+    "LoseScore": 72,
+    "LoseTeam": "Portland Fire"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-07T00:00:00",
+    "Away": "Chicago Sky",
+    "Home": "Toronto Tempo",
+    "AwayScore": 68,
+    "HomeScore": 85,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606070TOR.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 85,
+    "WinTeam": "Toronto Tempo",
+    "LoseScore": 68,
+    "LoseTeam": "Chicago Sky"
   }
 ]
