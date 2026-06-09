@@ -1228,5 +1228,50 @@
     "WinTeam": "Toronto Tempo",
     "LoseScore": 68,
     "LoseTeam": "Chicago Sky"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-08T00:00:00",
+    "Away": "New York Liberty",
+    "Home": "Connecticut Sun",
+    "AwayScore": 89,
+    "HomeScore": 80,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606080CON.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 89,
+    "WinTeam": "New York Liberty",
+    "LoseScore": 80,
+    "LoseTeam": "Connecticut Sun"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-08T00:00:00",
+    "Away": "Seattle Storm",
+    "Home": "Las Vegas Aces",
+    "AwayScore": 91,
+    "HomeScore": 101,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606080LVA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 101,
+    "WinTeam": "Las Vegas Aces",
+    "LoseScore": 91,
+    "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-08T00:00:00",
+    "Away": "Indiana Fever",
+    "Home": "Washington Mystics",
+    "AwayScore": 78,
+    "HomeScore": 76,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606080WAS.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 78,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 76,
+    "LoseTeam": "Washington Mystics"
   }
 ]
