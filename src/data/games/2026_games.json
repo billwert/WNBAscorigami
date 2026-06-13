@@ -1408,5 +1408,35 @@
     "WinTeam": "Las Vegas Aces",
     "LoseScore": 89,
     "LoseTeam": "Portland Fire"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-12T00:00:00",
+    "Away": "Golden State Valkyries",
+    "Home": "Seattle Storm",
+    "AwayScore": 76,
+    "HomeScore": 72,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606120SEA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 76,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 72,
+    "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-12T00:00:00",
+    "Away": "Toronto Tempo",
+    "Home": "Washington Mystics",
+    "AwayScore": 85,
+    "HomeScore": 86,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606120WAS.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 86,
+    "WinTeam": "Washington Mystics",
+    "LoseScore": 85,
+    "LoseTeam": "Toronto Tempo"
   }
 ]
