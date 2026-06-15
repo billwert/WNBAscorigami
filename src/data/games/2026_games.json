@@ -1498,5 +1498,35 @@
     "WinTeam": "Portland Fire",
     "LoseScore": 83,
     "LoseTeam": "Dallas Wings"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-14T00:00:00",
+    "Away": "Washington Mystics",
+    "Home": "New York Liberty",
+    "AwayScore": 64,
+    "HomeScore": 86,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606140NYL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 86,
+    "WinTeam": "New York Liberty",
+    "LoseScore": 64,
+    "LoseTeam": "Washington Mystics"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-14T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "Toronto Tempo",
+    "AwayScore": 102,
+    "HomeScore": 77,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606140TOR.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 102,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 77,
+    "LoseTeam": "Toronto Tempo"
   }
 ]
