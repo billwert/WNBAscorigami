@@ -22799,6 +22799,23 @@
     },
     {
       "pts_win": 108,
+      "pts_lose": 101,
+      "count": 1,
+      "first_date": "2026-06-18T00:00:00",
+      "first_team_win": "Atlanta Dream",
+      "first_team_lose": "Indiana Fever",
+      "first_team_home": "Indiana Fever",
+      "first_team_away": "Atlanta Dream",
+      "first_link": "https://www.basketball-reference.com/wnba/boxscores/202606180IND.html",
+      "last_date": "2026-06-18T00:00:00",
+      "last_team_win": "Atlanta Dream",
+      "last_team_lose": "Indiana Fever",
+      "last_team_home": "Indiana Fever",
+      "last_team_away": "Atlanta Dream",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606180IND.html"
+    },
+    {
+      "pts_win": 108,
       "pts_lose": 103,
       "count": 3,
       "first_date": "2010-07-07T00:00:00",
@@ -24056,5 +24073,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-06-19T05:25:32.6992465Z"
+  "lastUpdated": "2026-06-19T10:57:28.5860259Z"
 }

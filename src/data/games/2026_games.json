@@ -1678,5 +1678,20 @@
     "WinTeam": "Portland Fire",
     "LoseScore": 89,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-18T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "Indiana Fever",
+    "AwayScore": 108,
+    "HomeScore": 101,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606180IND.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 108,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 101,
+    "LoseTeam": "Indiana Fever"
   }
 ]
