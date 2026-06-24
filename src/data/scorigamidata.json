@@ -12804,19 +12804,19 @@
     {
       "pts_win": 87,
       "pts_lose": 76,
-      "count": 8,
+      "count": 9,
       "first_date": "2000-06-03T00:00:00",
       "first_team_win": "New York Liberty",
       "first_team_lose": "Utah Starzz",
       "first_team_home": "New York Liberty",
       "first_team_away": "Utah Starzz",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200006030NYL.html",
-      "last_date": "2025-07-09T00:00:00",
-      "last_team_win": "Chicago Sky",
-      "last_team_lose": "Dallas Wings",
-      "last_team_home": "Chicago Sky",
-      "last_team_away": "Dallas Wings",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202507090CHI.html"
+      "last_date": "2026-06-23T00:00:00",
+      "last_team_win": "New York Liberty",
+      "last_team_lose": "Las Vegas Aces",
+      "last_team_home": "Las Vegas Aces",
+      "last_team_away": "New York Liberty",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606230LVA.html"
     },
     {
       "pts_win": 87,
@@ -24107,5 +24107,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-06-24T08:33:41.5438796Z"
+  "lastUpdated": "2026-06-24T12:01:28.7673026Z"
 }

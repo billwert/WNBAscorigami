@@ -1888,5 +1888,20 @@
     "WinTeam": "Dallas Wings",
     "LoseScore": 110,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-06-23T00:00:00",
+    "Away": "New York Liberty",
+    "Home": "Las Vegas Aces",
+    "AwayScore": 87,
+    "HomeScore": 76,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202606230LVA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 87,
+    "WinTeam": "New York Liberty",
+    "LoseScore": 76,
+    "LoseTeam": "Las Vegas Aces"
   }
 ]
