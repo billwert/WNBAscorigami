@@ -7194,19 +7194,19 @@
     {
       "pts_win": 76,
       "pts_lose": 67,
-      "count": 19,
+      "count": 20,
       "first_date": "1999-06-19T00:00:00",
       "first_team_win": "Phoenix Mercury",
       "first_team_lose": "Cleveland Rockers",
       "first_team_home": "Phoenix Mercury",
       "first_team_away": "Cleveland Rockers",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/199906190PHO.html",
-      "last_date": "2024-07-02T00:00:00",
-      "last_team_win": "New York Liberty",
-      "last_team_lose": "Minnesota Lynx",
-      "last_team_home": "New York Liberty",
-      "last_team_away": "Minnesota Lynx",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202407020NYL.html"
+      "last_date": "2026-06-28T00:00:00",
+      "last_team_win": "Golden State Valkyries",
+      "last_team_lose": "New York Liberty",
+      "last_team_home": "Golden State Valkyries",
+      "last_team_away": "New York Liberty",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606280GSV.html"
     },
     {
       "pts_win": 76,
@@ -11767,19 +11767,19 @@
     {
       "pts_win": 85,
       "pts_lose": 77,
-      "count": 14,
+      "count": 15,
       "first_date": "2002-08-09T00:00:00",
       "first_team_win": "Los Angeles Sparks",
       "first_team_lose": "Utah Starzz",
       "first_team_home": "Utah Starzz",
       "first_team_away": "Los Angeles Sparks",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200208090UTA.html",
-      "last_date": "2025-07-15T00:00:00",
-      "last_team_win": "Indiana Fever",
-      "last_team_lose": "Connecticut Sun",
-      "last_team_home": "Connecticut Sun",
-      "last_team_away": "Indiana Fever",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202507150CON.html"
+      "last_date": "2026-06-28T00:00:00",
+      "last_team_win": "Minnesota Lynx",
+      "last_team_lose": "Dallas Wings",
+      "last_team_home": "Dallas Wings",
+      "last_team_away": "Minnesota Lynx",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606280DAL.html"
     },
     {
       "pts_win": 85,
@@ -22629,6 +22629,23 @@
     },
     {
       "pts_win": 107,
+      "pts_lose": 99,
+      "count": 1,
+      "first_date": "2026-06-28T00:00:00",
+      "first_team_win": "Las Vegas Aces",
+      "first_team_lose": "Chicago Sky",
+      "first_team_home": "Chicago Sky",
+      "first_team_away": "Las Vegas Aces",
+      "first_link": "https://www.basketball-reference.com/wnba/boxscores/202606280CHI.html",
+      "last_date": "2026-06-28T00:00:00",
+      "last_team_win": "Las Vegas Aces",
+      "last_team_lose": "Chicago Sky",
+      "last_team_home": "Chicago Sky",
+      "last_team_away": "Las Vegas Aces",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606280CHI.html"
+    },
+    {
+      "pts_win": 107,
       "pts_lose": 101,
       "count": 3,
       "first_date": "2011-06-23T00:00:00",
@@ -24141,6 +24158,23 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606260CHI.html"
     },
     {
+      "pts_win": 124,
+      "pts_lose": 123,
+      "count": 1,
+      "first_date": "2026-06-28T00:00:00",
+      "first_team_win": "Washington Mystics",
+      "first_team_lose": "Portland Fire",
+      "first_team_home": "Washington Mystics",
+      "first_team_away": "Portland Fire",
+      "first_link": "https://www.basketball-reference.com/wnba/boxscores/202606280WAS.html",
+      "last_date": "2026-06-28T00:00:00",
+      "last_team_win": "Washington Mystics",
+      "last_team_lose": "Portland Fire",
+      "last_team_home": "Washington Mystics",
+      "last_team_away": "Portland Fire",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606280WAS.html"
+    },
+    {
       "pts_win": 125,
       "pts_lose": 97,
       "count": 1,
@@ -24175,5 +24209,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-06-29T09:59:24.6772386Z"
+  "lastUpdated": "2026-06-29T14:19:22.8748558Z"
 }
