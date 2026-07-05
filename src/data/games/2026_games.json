@@ -2233,5 +2233,35 @@
     "WinTeam": "New York Liberty",
     "LoseScore": 86,
     "LoseTeam": "Minnesota Lynx"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-04T00:00:00",
+    "Away": "Golden State Valkyries",
+    "Home": "Atlanta Dream",
+    "AwayScore": 88,
+    "HomeScore": 83,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607040ATL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 88,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 83,
+    "LoseTeam": "Atlanta Dream"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-04T00:00:00",
+    "Away": "Portland Fire",
+    "Home": "Seattle Storm",
+    "AwayScore": 77,
+    "HomeScore": 72,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607040SEA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 77,
+    "WinTeam": "Portland Fire",
+    "LoseScore": 72,
+    "LoseTeam": "Seattle Storm"
   }
 ]
