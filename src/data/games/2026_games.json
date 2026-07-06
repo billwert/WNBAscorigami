@@ -2263,5 +2263,35 @@
     "WinTeam": "Portland Fire",
     "LoseScore": 72,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-05T00:00:00",
+    "Away": "Indiana Fever",
+    "Home": "Las Vegas Aces",
+    "AwayScore": 84,
+    "HomeScore": 68,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607050LVA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 84,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 68,
+    "LoseTeam": "Las Vegas Aces"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-05T00:00:00",
+    "Away": "Dallas Wings",
+    "Home": "Toronto Tempo",
+    "AwayScore": 89,
+    "HomeScore": 76,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607050TOR.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 89,
+    "WinTeam": "Dallas Wings",
+    "LoseScore": 76,
+    "LoseTeam": "Toronto Tempo"
   }
 ]
