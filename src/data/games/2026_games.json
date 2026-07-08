@@ -2338,5 +2338,35 @@
     "WinTeam": "Golden State Valkyries",
     "LoseScore": 49,
     "LoseTeam": "Washington Mystics"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-07T00:00:00",
+    "Away": "Dallas Wings",
+    "Home": "New York Liberty",
+    "AwayScore": 88,
+    "HomeScore": 77,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607070NYL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 88,
+    "WinTeam": "Dallas Wings",
+    "LoseScore": 77,
+    "LoseTeam": "New York Liberty"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-07T00:00:00",
+    "Away": "Chicago Sky",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 77,
+    "HomeScore": 66,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607070PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 77,
+    "WinTeam": "Chicago Sky",
+    "LoseScore": 66,
+    "LoseTeam": "Phoenix Mercury"
   }
 ]
