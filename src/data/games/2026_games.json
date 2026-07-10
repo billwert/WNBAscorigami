@@ -2413,5 +2413,50 @@
     "WinTeam": "Golden State Valkyries",
     "LoseScore": 75,
     "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-09T00:00:00",
+    "Away": "Seattle Storm",
+    "Home": "Atlanta Dream",
+    "AwayScore": 78,
+    "HomeScore": 89,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607090ATL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 89,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 78,
+    "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-09T00:00:00",
+    "Away": "Indiana Fever",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 92,
+    "HomeScore": 89,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607090PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 92,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 89,
+    "LoseTeam": "Phoenix Mercury"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-09T00:00:00",
+    "Away": "Las Vegas Aces",
+    "Home": "Portland Fire",
+    "AwayScore": 88,
+    "HomeScore": 80,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607090POR.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 88,
+    "WinTeam": "Las Vegas Aces",
+    "LoseScore": 80,
+    "LoseTeam": "Portland Fire"
   }
 ]
