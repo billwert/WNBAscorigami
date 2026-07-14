@@ -2608,5 +2608,35 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 79,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-13T00:00:00",
+    "Away": "Los Angeles Sparks",
+    "Home": "Atlanta Dream",
+    "AwayScore": 92,
+    "HomeScore": 101,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607130ATL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 101,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 92,
+    "LoseTeam": "Los Angeles Sparks"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-13T00:00:00",
+    "Away": "Phoenix Mercury",
+    "Home": "Minnesota Lynx",
+    "AwayScore": 100,
+    "HomeScore": 104,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607130MIN.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 104,
+    "WinTeam": "Minnesota Lynx",
+    "LoseScore": 100,
+    "LoseTeam": "Phoenix Mercury"
   }
 ]
