@@ -2638,5 +2638,35 @@
     "WinTeam": "Minnesota Lynx",
     "LoseScore": 100,
     "LoseTeam": "Phoenix Mercury"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-14T00:00:00",
+    "Away": "Portland Fire",
+    "Home": "Connecticut Sun",
+    "AwayScore": 87,
+    "HomeScore": 90,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607140CON.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 90,
+    "WinTeam": "Connecticut Sun",
+    "LoseScore": 87,
+    "LoseTeam": "Portland Fire"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-14T00:00:00",
+    "Away": "Washington Mystics",
+    "Home": "Toronto Tempo",
+    "AwayScore": 79,
+    "HomeScore": 62,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607140TOR.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 79,
+    "WinTeam": "Washington Mystics",
+    "LoseScore": 62,
+    "LoseTeam": "Toronto Tempo"
   }
 ]
