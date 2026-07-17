@@ -2713,5 +2713,20 @@
     "WinTeam": "Minnesota Lynx",
     "LoseScore": 87,
     "LoseTeam": "Los Angeles Sparks"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-16T00:00:00",
+    "Away": "Portland Fire",
+    "Home": "Washington Mystics",
+    "AwayScore": 75,
+    "HomeScore": 56,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607160WAS.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 75,
+    "WinTeam": "Portland Fire",
+    "LoseScore": 56,
+    "LoseTeam": "Washington Mystics"
   }
 ]
