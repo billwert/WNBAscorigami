@@ -2788,5 +2788,50 @@
     "WinTeam": "Atlanta Dream",
     "LoseScore": 92,
     "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-18T00:00:00",
+    "Away": "Washington Mystics",
+    "Home": "Golden State Valkyries",
+    "AwayScore": 69,
+    "HomeScore": 74,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607180GSV.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 74,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 69,
+    "LoseTeam": "Washington Mystics"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-18T00:00:00",
+    "Away": "New York Liberty",
+    "Home": "Indiana Fever",
+    "AwayScore": 88,
+    "HomeScore": 108,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607180IND.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 108,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 88,
+    "LoseTeam": "New York Liberty"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-18T00:00:00",
+    "Away": "Portland Fire",
+    "Home": "Minnesota Lynx",
+    "AwayScore": 93,
+    "HomeScore": 101,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607180MIN.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 101,
+    "WinTeam": "Minnesota Lynx",
+    "LoseScore": 93,
+    "LoseTeam": "Portland Fire"
   }
 ]
