@@ -12294,19 +12294,19 @@
     {
       "pts_win": 86,
       "pts_lose": 76,
-      "count": 11,
+      "count": 12,
       "first_date": "1997-07-25T00:00:00",
       "first_team_win": "Houston Comets",
       "first_team_lose": "Sacramento Monarchs",
       "first_team_home": "Sacramento Monarchs",
       "first_team_away": "Houston Comets",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/199707250SAC.html",
-      "last_date": "2026-06-17T00:00:00",
-      "last_team_win": "Las Vegas Aces",
-      "last_team_lose": "Phoenix Mercury",
-      "last_team_home": "Phoenix Mercury",
-      "last_team_away": "Las Vegas Aces",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606170PHO.html"
+      "last_date": "2026-07-22T00:00:00",
+      "last_team_win": "Minnesota Lynx",
+      "last_team_lose": "Seattle Storm",
+      "last_team_home": "Seattle Storm",
+      "last_team_away": "Minnesota Lynx",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202607220SEA.html"
     },
     {
       "pts_win": 86,
@@ -12396,19 +12396,19 @@
     {
       "pts_win": 86,
       "pts_lose": 82,
-      "count": 8,
+      "count": 9,
       "first_date": "2007-08-12T00:00:00",
       "first_team_win": "Sacramento Monarchs",
       "first_team_lose": "Washington Mystics",
       "first_team_home": "Sacramento Monarchs",
       "first_team_away": "Washington Mystics",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200708120SAC.html",
-      "last_date": "2024-05-25T00:00:00",
-      "last_team_win": "Connecticut Sun",
-      "last_team_lose": "Chicago Sky",
-      "last_team_home": "Chicago Sky",
-      "last_team_away": "Connecticut Sun",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202405250CHI.html"
+      "last_date": "2026-07-22T00:00:00",
+      "last_team_win": "Phoenix Mercury",
+      "last_team_lose": "Los Angeles Sparks",
+      "last_team_home": "Los Angeles Sparks",
+      "last_team_away": "Phoenix Mercury",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202607220LAS.html"
     },
     {
       "pts_win": 86,
@@ -17460,6 +17460,23 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/202410100NYL.html"
     },
     {
+      "pts_win": 95,
+      "pts_lose": 94,
+      "count": 1,
+      "first_date": "2026-07-22T00:00:00",
+      "first_team_win": "New York Liberty",
+      "first_team_lose": "Chicago Sky",
+      "first_team_home": "New York Liberty",
+      "first_team_away": "Chicago Sky",
+      "first_link": "https://www.basketball-reference.com/wnba/boxscores/202607220NYL.html",
+      "last_date": "2026-07-22T00:00:00",
+      "last_team_win": "New York Liberty",
+      "last_team_lose": "Chicago Sky",
+      "last_team_home": "New York Liberty",
+      "last_team_away": "Chicago Sky",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202607220NYL.html"
+    },
+    {
       "pts_win": 96,
       "pts_lose": 63,
       "count": 2,
@@ -20027,6 +20044,23 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606130LVA.html"
     },
     {
+      "pts_win": 100,
+      "pts_lose": 99,
+      "count": 1,
+      "first_date": "2026-07-22T00:00:00",
+      "first_team_win": "Washington Mystics",
+      "first_team_lose": "Las Vegas Aces",
+      "first_team_home": "Washington Mystics",
+      "first_team_away": "Las Vegas Aces",
+      "first_link": "https://www.basketball-reference.com/wnba/boxscores/202607220WAS.html",
+      "last_date": "2026-07-22T00:00:00",
+      "last_team_win": "Washington Mystics",
+      "last_team_lose": "Las Vegas Aces",
+      "last_team_home": "Washington Mystics",
+      "last_team_away": "Las Vegas Aces",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202607220WAS.html"
+    },
+    {
       "pts_win": 101,
       "pts_lose": 65,
       "count": 1,
@@ -20471,19 +20505,19 @@
     {
       "pts_win": 101,
       "pts_lose": 97,
-      "count": 3,
+      "count": 4,
       "first_date": "2013-06-27T00:00:00",
       "first_team_win": "Phoenix Mercury",
       "first_team_lose": "Washington Mystics",
       "first_team_home": "Washington Mystics",
       "first_team_away": "Phoenix Mercury",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/201306270WAS.html",
-      "last_date": "2026-06-19T00:00:00",
-      "last_team_win": "Toronto Tempo",
-      "last_team_lose": "Connecticut Sun",
-      "last_team_home": "Connecticut Sun",
-      "last_team_away": "Toronto Tempo",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202606190CON.html"
+      "last_date": "2026-07-22T00:00:00",
+      "last_team_win": "Dallas Wings",
+      "last_team_lose": "Portland Fire",
+      "last_team_home": "Portland Fire",
+      "last_team_away": "Dallas Wings",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202607220POR.html"
     },
     {
       "pts_win": 101,
@@ -24295,6 +24329,23 @@
     },
     {
       "pts_win": 123,
+      "pts_lose": 88,
+      "count": 1,
+      "first_date": "2026-07-22T00:00:00",
+      "first_team_win": "Indiana Fever",
+      "first_team_lose": "Connecticut Sun",
+      "first_team_home": "Indiana Fever",
+      "first_team_away": "Connecticut Sun",
+      "first_link": "https://www.basketball-reference.com/wnba/boxscores/202607220IND.html",
+      "last_date": "2026-07-22T00:00:00",
+      "last_team_win": "Indiana Fever",
+      "last_team_lose": "Connecticut Sun",
+      "last_team_home": "Indiana Fever",
+      "last_team_away": "Connecticut Sun",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202607220IND.html"
+    },
+    {
+      "pts_win": 123,
       "pts_lose": 91,
       "count": 1,
       "first_date": "2010-07-22T00:00:00",
@@ -24379,5 +24430,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-07-23T06:40:11.3096745Z"
+  "lastUpdated": "2026-07-23T09:36:45.9013732Z"
 }
