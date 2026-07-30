@@ -3103,5 +3103,35 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 84,
     "LoseTeam": "Connecticut Sun"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-29T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "Dallas Wings",
+    "AwayScore": 82,
+    "HomeScore": 81,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607290DAL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 82,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 81,
+    "LoseTeam": "Dallas Wings"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-29T00:00:00",
+    "Away": "Golden State Valkyries",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 89,
+    "HomeScore": 91,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607290PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 91,
+    "WinTeam": "Phoenix Mercury",
+    "LoseScore": 89,
+    "LoseTeam": "Golden State Valkyries"
   }
 ]
