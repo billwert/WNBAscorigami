@@ -3178,5 +3178,50 @@
     "WinTeam": "Minnesota Lynx",
     "LoseScore": 72,
     "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-31T00:00:00",
+    "Away": "Seattle Storm",
+    "Home": "Atlanta Dream",
+    "AwayScore": 89,
+    "HomeScore": 98,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607310ATL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 98,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 89,
+    "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-31T00:00:00",
+    "Away": "Indiana Fever",
+    "Home": "Portland Fire",
+    "AwayScore": 112,
+    "HomeScore": 98,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607310POR.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 112,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 98,
+    "LoseTeam": "Portland Fire"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-07-31T00:00:00",
+    "Away": "Dallas Wings",
+    "Home": "Washington Mystics",
+    "AwayScore": 75,
+    "HomeScore": 81,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202607310WAS.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 81,
+    "WinTeam": "Washington Mystics",
+    "LoseScore": 75,
+    "LoseTeam": "Dallas Wings"
   }
 ]
