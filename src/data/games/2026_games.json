@@ -3223,5 +3223,35 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 75,
     "LoseTeam": "Dallas Wings"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-01T00:00:00",
+    "Away": "Las Vegas Aces",
+    "Home": "Chicago Sky",
+    "AwayScore": 83,
+    "HomeScore": 84,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608010CHI.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 84,
+    "WinTeam": "Chicago Sky",
+    "LoseScore": 83,
+    "LoseTeam": "Las Vegas Aces"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-01T00:00:00",
+    "Away": "New York Liberty",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 94,
+    "HomeScore": 92,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608010PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 94,
+    "WinTeam": "New York Liberty",
+    "LoseScore": 92,
+    "LoseTeam": "Phoenix Mercury"
   }
 ]
