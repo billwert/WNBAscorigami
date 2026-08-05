@@ -15643,19 +15643,19 @@
     {
       "pts_win": 92,
       "pts_lose": 81,
-      "count": 5,
+      "count": 6,
       "first_date": "2003-08-06T00:00:00",
       "first_team_win": "Washington Mystics",
       "first_team_lose": "Detroit Shock",
       "first_team_home": "Washington Mystics",
       "first_team_away": "Detroit Shock",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200308060WAS.html",
-      "last_date": "2024-05-15T00:00:00",
-      "last_team_win": "Atlanta Dream",
-      "last_team_lose": "Los Angeles Sparks",
-      "last_team_home": "Los Angeles Sparks",
-      "last_team_away": "Atlanta Dream",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202405150LAS.html"
+      "last_date": "2026-08-04T00:00:00",
+      "last_team_win": "Golden State Valkyries",
+      "last_team_lose": "Toronto Tempo",
+      "last_team_home": "Golden State Valkyries",
+      "last_team_away": "Toronto Tempo",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608040GSV.html"
     },
     {
       "pts_win": 92,
@@ -24498,5 +24498,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-08-05T06:42:08.1095721Z"
+  "lastUpdated": "2026-08-05T09:49:09.6926462Z"
 }

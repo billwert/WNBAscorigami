@@ -3358,5 +3358,20 @@
     "WinTeam": "New York Liberty",
     "LoseScore": 83,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-04T00:00:00",
+    "Away": "Toronto Tempo",
+    "Home": "Golden State Valkyries",
+    "AwayScore": 81,
+    "HomeScore": 92,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608040GSV.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 92,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 81,
+    "LoseTeam": "Toronto Tempo"
   }
 ]
