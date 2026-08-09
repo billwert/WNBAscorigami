@@ -14657,19 +14657,19 @@
     {
       "pts_win": 90,
       "pts_lose": 86,
-      "count": 10,
+      "count": 11,
       "first_date": "2002-08-04T00:00:00",
       "first_team_win": "Los Angeles Sparks",
       "first_team_lose": "Utah Starzz",
       "first_team_home": "Los Angeles Sparks",
       "first_team_away": "Utah Starzz",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200208040LAS.html",
-      "last_date": "2026-05-14T00:00:00",
-      "last_team_win": "Minnesota Lynx",
-      "last_team_lose": "Dallas Wings",
-      "last_team_home": "Dallas Wings",
-      "last_team_away": "Minnesota Lynx",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202605140DAL.html"
+      "last_date": "2026-08-08T00:00:00",
+      "last_team_win": "Indiana Fever",
+      "last_team_lose": "Chicago Sky",
+      "last_team_home": "Chicago Sky",
+      "last_team_away": "Indiana Fever",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608080CHI.html"
     },
     {
       "pts_win": 90,
@@ -18873,19 +18873,19 @@
     {
       "pts_win": 98,
       "pts_lose": 87,
-      "count": 3,
+      "count": 4,
       "first_date": "2009-07-22T00:00:00",
       "first_team_win": "Seattle Storm",
       "first_team_lose": "Los Angeles Sparks",
       "first_team_home": "Seattle Storm",
       "first_team_away": "Los Angeles Sparks",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200907220SEA.html",
-      "last_date": "2024-08-21T00:00:00",
+      "last_date": "2026-08-08T00:00:00",
       "last_team_win": "Minnesota Lynx",
       "last_team_lose": "Las Vegas Aces",
-      "last_team_home": "Las Vegas Aces",
-      "last_team_away": "Minnesota Lynx",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202408210LVA.html"
+      "last_team_home": "Minnesota Lynx",
+      "last_team_away": "Las Vegas Aces",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608080MIN.html"
     },
     {
       "pts_win": 98,
@@ -19961,19 +19961,19 @@
     {
       "pts_win": 100,
       "pts_lose": 93,
-      "count": 5,
+      "count": 6,
       "first_date": "2012-07-07T00:00:00",
       "first_team_win": "Atlanta Dream",
       "first_team_lose": "Phoenix Mercury",
       "first_team_home": "Phoenix Mercury",
       "first_team_away": "Atlanta Dream",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/201207070PHO.html",
-      "last_date": "2026-07-28T00:00:00",
-      "last_team_win": "Minnesota Lynx",
-      "last_team_lose": "Toronto Tempo",
-      "last_team_home": "Minnesota Lynx",
-      "last_team_away": "Toronto Tempo",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202607280MIN.html"
+      "last_date": "2026-08-08T00:00:00",
+      "last_team_win": "Portland Fire",
+      "last_team_lose": "Seattle Storm",
+      "last_team_home": "Portland Fire",
+      "last_team_away": "Seattle Storm",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608080POR.html"
     },
     {
       "pts_win": 100,
@@ -24498,5 +24498,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-08-09T09:02:48.6657108Z"
+  "lastUpdated": "2026-08-09T09:57:02.5942941Z"
 }
