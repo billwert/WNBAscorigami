@@ -3628,5 +3628,35 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 75,
     "LoseTeam": "Phoenix Mercury"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-10T00:00:00",
+    "Away": "Toronto Tempo",
+    "Home": "Atlanta Dream",
+    "AwayScore": 95,
+    "HomeScore": 107,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608100ATL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 107,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 95,
+    "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-10T00:00:00",
+    "Away": "Chicago Sky",
+    "Home": "Seattle Storm",
+    "AwayScore": 88,
+    "HomeScore": 97,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608100SEA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 97,
+    "WinTeam": "Seattle Storm",
+    "LoseScore": 88,
+    "LoseTeam": "Chicago Sky"
   }
 ]
