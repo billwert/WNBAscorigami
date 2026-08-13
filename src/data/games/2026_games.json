@@ -3703,5 +3703,50 @@
     "WinTeam": "Las Vegas Aces",
     "LoseScore": 76,
     "LoseTeam": "Washington Mystics"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-12T00:00:00",
+    "Away": "Toronto Tempo",
+    "Home": "Dallas Wings",
+    "AwayScore": 88,
+    "HomeScore": 94,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608120DAL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 94,
+    "WinTeam": "Dallas Wings",
+    "LoseScore": 88,
+    "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-12T00:00:00",
+    "Away": "Chicago Sky",
+    "Home": "Golden State Valkyries",
+    "AwayScore": 71,
+    "HomeScore": 91,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608120GSV.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 91,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 71,
+    "LoseTeam": "Chicago Sky"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-12T00:00:00",
+    "Away": "Minnesota Lynx",
+    "Home": "Portland Fire",
+    "AwayScore": 85,
+    "HomeScore": 81,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608120POR.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 85,
+    "WinTeam": "Minnesota Lynx",
+    "LoseScore": 81,
+    "LoseTeam": "Portland Fire"
   }
 ]
