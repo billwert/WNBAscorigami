@@ -3793,5 +3793,35 @@
     "WinTeam": "New York Liberty",
     "LoseScore": 81,
     "LoseTeam": "Los Angeles Sparks"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-14T00:00:00",
+    "Away": "Dallas Wings",
+    "Home": "Indiana Fever",
+    "AwayScore": 87,
+    "HomeScore": 98,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608140IND.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 98,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 87,
+    "LoseTeam": "Dallas Wings"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-14T00:00:00",
+    "Away": "Portland Fire",
+    "Home": "Seattle Storm",
+    "AwayScore": 84,
+    "HomeScore": 82,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608140SEA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 84,
+    "WinTeam": "Portland Fire",
+    "LoseScore": 82,
+    "LoseTeam": "Seattle Storm"
   }
 ]
