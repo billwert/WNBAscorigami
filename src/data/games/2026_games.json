@@ -3823,5 +3823,50 @@
     "WinTeam": "Portland Fire",
     "LoseScore": 82,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-15T00:00:00",
+    "Away": "New York Liberty",
+    "Home": "Connecticut Sun",
+    "AwayScore": 82,
+    "HomeScore": 75,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608150CON.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 82,
+    "WinTeam": "New York Liberty",
+    "LoseScore": 75,
+    "LoseTeam": "Connecticut Sun"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-15T00:00:00",
+    "Away": "Minnesota Lynx",
+    "Home": "Las Vegas Aces",
+    "AwayScore": 92,
+    "HomeScore": 87,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608150LVA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 92,
+    "WinTeam": "Minnesota Lynx",
+    "LoseScore": 87,
+    "LoseTeam": "Las Vegas Aces"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-15T00:00:00",
+    "Away": "Los Angeles Sparks",
+    "Home": "Washington Mystics",
+    "AwayScore": 70,
+    "HomeScore": 80,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608150WAS.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 80,
+    "WinTeam": "Washington Mystics",
+    "LoseScore": 70,
+    "LoseTeam": "Los Angeles Sparks"
   }
 ]
