@@ -3868,5 +3868,50 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 70,
     "LoseTeam": "Los Angeles Sparks"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-16T00:00:00",
+    "Away": "Indiana Fever",
+    "Home": "Atlanta Dream",
+    "AwayScore": 95,
+    "HomeScore": 91,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608160ATL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 95,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 91,
+    "LoseTeam": "Atlanta Dream"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-16T00:00:00",
+    "Away": "Portland Fire",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 88,
+    "HomeScore": 85,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608160PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 88,
+    "WinTeam": "Portland Fire",
+    "LoseScore": 85,
+    "LoseTeam": "Phoenix Mercury"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-16T00:00:00",
+    "Away": "Chicago Sky",
+    "Home": "Seattle Storm",
+    "AwayScore": 82,
+    "HomeScore": 80,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608160SEA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 82,
+    "WinTeam": "Chicago Sky",
+    "LoseScore": 80,
+    "LoseTeam": "Seattle Storm"
   }
 ]
