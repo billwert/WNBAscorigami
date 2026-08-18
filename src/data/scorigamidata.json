@@ -8146,19 +8146,19 @@
     {
       "pts_win": 78,
       "pts_lose": 70,
-      "count": 13,
+      "count": 14,
       "first_date": "1997-06-26T00:00:00",
       "first_team_win": "Sacramento Monarchs",
       "first_team_lose": "Charlotte Sting",
       "first_team_home": "Sacramento Monarchs",
       "first_team_away": "Charlotte Sting",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/199706260SAC.html",
-      "last_date": "2023-08-18T00:00:00",
-      "last_team_win": "Minnesota Lynx",
-      "last_team_lose": "Seattle Storm",
-      "last_team_home": "Seattle Storm",
-      "last_team_away": "Minnesota Lynx",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202308180SEA.html"
+      "last_date": "2026-08-17T00:00:00",
+      "last_team_win": "Golden State Valkyries",
+      "last_team_lose": "Dallas Wings",
+      "last_team_home": "Golden State Valkyries",
+      "last_team_away": "Dallas Wings",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608170GSV.html"
     },
     {
       "pts_win": 78,
@@ -24549,5 +24549,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-08-18T08:53:42.1956592Z"
+  "lastUpdated": "2026-08-18T09:48:22.1131334Z"
 }

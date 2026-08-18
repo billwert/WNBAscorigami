@@ -3913,5 +3913,20 @@
     "WinTeam": "Chicago Sky",
     "LoseScore": 80,
     "LoseTeam": "Seattle Storm"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-17T00:00:00",
+    "Away": "Dallas Wings",
+    "Home": "Golden State Valkyries",
+    "AwayScore": 70,
+    "HomeScore": 78,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608170GSV.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 78,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 70,
+    "LoseTeam": "Dallas Wings"
   }
 ]
