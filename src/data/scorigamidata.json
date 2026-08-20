@@ -7636,19 +7636,19 @@
     {
       "pts_win": 77,
       "pts_lose": 66,
-      "count": 12,
+      "count": 13,
       "first_date": "1997-07-26T00:00:00",
       "first_team_win": "Cleveland Rockers",
       "first_team_lose": "Utah Starzz",
       "first_team_home": "Utah Starzz",
       "first_team_away": "Cleveland Rockers",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/199707260UTA.html",
-      "last_date": "2026-07-07T00:00:00",
-      "last_team_win": "Chicago Sky",
-      "last_team_lose": "Phoenix Mercury",
-      "last_team_home": "Phoenix Mercury",
-      "last_team_away": "Chicago Sky",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202607070PHO.html"
+      "last_date": "2026-08-19T00:00:00",
+      "last_team_win": "Minnesota Lynx",
+      "last_team_lose": "Golden State Valkyries",
+      "last_team_home": "Golden State Valkyries",
+      "last_team_away": "Minnesota Lynx",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608190GSV.html"
     },
     {
       "pts_win": 77,
@@ -16187,19 +16187,19 @@
     {
       "pts_win": 93,
       "pts_lose": 82,
-      "count": 9,
+      "count": 10,
       "first_date": "2002-06-01T00:00:00",
       "first_team_win": "Washington Mystics",
       "first_team_lose": "Orlando Miracle",
       "first_team_home": "Washington Mystics",
       "first_team_away": "Orlando Miracle",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200206010WAS.html",
-      "last_date": "2020-08-10T00:00:00",
-      "last_team_win": "Connecticut Sun",
-      "last_team_lose": "Atlanta Dream",
-      "last_team_home": "Atlanta Dream",
-      "last_team_away": "Connecticut Sun",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202008100ATL.html"
+      "last_date": "2026-08-19T00:00:00",
+      "last_team_win": "Washington Mystics",
+      "last_team_lose": "Toronto Tempo",
+      "last_team_home": "Washington Mystics",
+      "last_team_away": "Toronto Tempo",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608190WAS.html"
     },
     {
       "pts_win": 93,
@@ -24549,5 +24549,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-08-20T08:56:29.1921179Z"
+  "lastUpdated": "2026-08-20T09:50:20.9667228Z"
 }
