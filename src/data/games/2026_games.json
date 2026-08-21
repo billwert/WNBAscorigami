@@ -4018,5 +4018,50 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 82,
     "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-20T00:00:00",
+    "Away": "Indiana Fever",
+    "Home": "Dallas Wings",
+    "AwayScore": 85,
+    "HomeScore": 91,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608200DAL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 91,
+    "WinTeam": "Dallas Wings",
+    "LoseScore": 85,
+    "LoseTeam": "Indiana Fever"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-20T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "Los Angeles Sparks",
+    "AwayScore": 124,
+    "HomeScore": 88,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608200LAS.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 124,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 88,
+    "LoseTeam": "Los Angeles Sparks"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-20T00:00:00",
+    "Away": "Connecticut Sun",
+    "Home": "Las Vegas Aces",
+    "AwayScore": 78,
+    "HomeScore": 101,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608200LVA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 101,
+    "WinTeam": "Las Vegas Aces",
+    "LoseScore": 78,
+    "LoseTeam": "Connecticut Sun"
   }
 ]
