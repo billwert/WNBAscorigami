@@ -32,18 +32,32 @@ static class ScorigamiNotifier
 
         Console.WriteLine($"Found {newScorigamis.Count} new scorigami(s)");
 
-        BlueSkyPoster? poster = null;
-        if (!whatIf)
-            poster = BlueSkyPoster.TryCreate();
+        var poster = BlueSkyPoster.TryCreate();
 
         int totalCount = newData.Count;
         int newCount = newScorigamis.Count;
+
+        // Oldest number in the batch, checked first so one feed walk serves them all.
+        if (poster != null)
+        {
+            await poster.PrimeFeedAsync(totalCount - newCount);
+            if (poster.FeedReadFailed && !whatIf)
+            {
+                Console.Error.WriteLine(
+                    "Could not read the Bluesky timeline to check for duplicates — posting nothing this run");
+                return;
+            }
+        }
 
         for (int i = 0; i < newScorigamis.Count; i++)
         {
             var s = newScorigamis[i];
             int rank = totalCount - newCount + i + 1;
             string text = FormatPost(s, rank);
+
+            if (poster != null && !poster.FeedReadFailed &&
+                await poster.AlreadyPostedAsync(rank - 1, s.pts_win, s.pts_lose))
+                continue;
 
             if (whatIf)
             {
