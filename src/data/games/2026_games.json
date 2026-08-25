@@ -4213,5 +4213,35 @@
     "WinTeam": "Las Vegas Aces",
     "LoseScore": 78,
     "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-24T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "Los Angeles Sparks",
+    "AwayScore": 78,
+    "HomeScore": 71,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608240LAS.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 78,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 71,
+    "LoseTeam": "Los Angeles Sparks"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-24T00:00:00",
+    "Away": "Golden State Valkyries",
+    "Home": "Minnesota Lynx",
+    "AwayScore": 80,
+    "HomeScore": 66,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608240MIN.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 80,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 66,
+    "LoseTeam": "Minnesota Lynx"
   }
 ]
