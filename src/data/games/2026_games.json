@@ -4243,5 +4243,50 @@
     "WinTeam": "Golden State Valkyries",
     "LoseScore": 66,
     "LoseTeam": "Minnesota Lynx"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-25T00:00:00",
+    "Away": "Chicago Sky",
+    "Home": "Connecticut Sun",
+    "AwayScore": 81,
+    "HomeScore": 87,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608250CON.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 87,
+    "WinTeam": "Connecticut Sun",
+    "LoseScore": 81,
+    "LoseTeam": "Chicago Sky"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-25T00:00:00",
+    "Away": "Portland Fire",
+    "Home": "Dallas Wings",
+    "AwayScore": 78,
+    "HomeScore": 96,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608250DAL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 96,
+    "WinTeam": "Dallas Wings",
+    "LoseScore": 78,
+    "LoseTeam": "Portland Fire"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-25T00:00:00",
+    "Away": "Washington Mystics",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 94,
+    "HomeScore": 84,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608250PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 94,
+    "WinTeam": "Washington Mystics",
+    "LoseScore": 84,
+    "LoseTeam": "Phoenix Mercury"
   }
 ]
