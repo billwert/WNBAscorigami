@@ -4288,5 +4288,35 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 84,
     "LoseTeam": "Phoenix Mercury"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-26T00:00:00",
+    "Away": "Golden State Valkyries",
+    "Home": "Connecticut Sun",
+    "AwayScore": 89,
+    "HomeScore": 64,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608260CON.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 89,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 64,
+    "LoseTeam": "Connecticut Sun"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-26T00:00:00",
+    "Away": "Toronto Tempo",
+    "Home": "Seattle Storm",
+    "AwayScore": 78,
+    "HomeScore": 90,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608260SEA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 90,
+    "WinTeam": "Seattle Storm",
+    "LoseScore": 78,
+    "LoseTeam": "Toronto Tempo"
   }
 ]
