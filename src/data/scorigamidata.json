@@ -8486,19 +8486,19 @@
     {
       "pts_win": 79,
       "pts_lose": 60,
-      "count": 5,
+      "count": 6,
       "first_date": "2001-08-04T00:00:00",
       "first_team_win": "Los Angeles Sparks",
       "first_team_lose": "Seattle Storm",
       "first_team_home": "Los Angeles Sparks",
       "first_team_away": "Seattle Storm",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200108040LAS.html",
-      "last_date": "2016-10-11T00:00:00",
-      "last_team_win": "Minnesota Lynx",
-      "last_team_lose": "Los Angeles Sparks",
-      "last_team_home": "Minnesota Lynx",
-      "last_team_away": "Los Angeles Sparks",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/201610110MIN.html"
+      "last_date": "2026-08-27T00:00:00",
+      "last_team_win": "Golden State Valkyries",
+      "last_team_lose": "New York Liberty",
+      "last_team_home": "New York Liberty",
+      "last_team_away": "Golden State Valkyries",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608270NYL.html"
     },
     {
       "pts_win": 79,
@@ -9132,19 +9132,19 @@
     {
       "pts_win": 80,
       "pts_lose": 73,
-      "count": 11,
+      "count": 12,
       "first_date": "2002-06-26T00:00:00",
       "first_team_win": "Charlotte Sting",
       "first_team_lose": "Detroit Shock",
       "first_team_home": "Detroit Shock",
       "first_team_away": "Charlotte Sting",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200206260DET.html",
-      "last_date": "2023-07-30T00:00:00",
-      "last_team_win": "Atlanta Dream",
-      "last_team_lose": "Washington Mystics",
-      "last_team_home": "Atlanta Dream",
+      "last_date": "2026-08-27T00:00:00",
+      "last_team_win": "Washington Mystics",
+      "last_team_lose": "Phoenix Mercury",
+      "last_team_home": "Phoenix Mercury",
       "last_team_away": "Washington Mystics",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202307300ATL.html"
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608270PHO.html"
     },
     {
       "pts_win": 80,
@@ -24600,5 +24600,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-08-28T05:26:23.0512324Z"
+  "lastUpdated": "2026-08-28T18:45:47.5848828Z"
 }

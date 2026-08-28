@@ -4318,5 +4318,35 @@
     "WinTeam": "Seattle Storm",
     "LoseScore": 78,
     "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-27T00:00:00",
+    "Away": "Golden State Valkyries",
+    "Home": "New York Liberty",
+    "AwayScore": 79,
+    "HomeScore": 60,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608270NYL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 79,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 60,
+    "LoseTeam": "New York Liberty"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-27T00:00:00",
+    "Away": "Washington Mystics",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 80,
+    "HomeScore": 73,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608270PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 80,
+    "WinTeam": "Washington Mystics",
+    "LoseScore": 73,
+    "LoseTeam": "Phoenix Mercury"
   }
 ]
