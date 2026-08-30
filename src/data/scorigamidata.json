@@ -11597,19 +11597,19 @@
     {
       "pts_win": 85,
       "pts_lose": 66,
-      "count": 4,
+      "count": 5,
       "first_date": "2008-05-17T00:00:00",
       "first_team_win": "Detroit Shock",
       "first_team_lose": "Houston Comets",
       "first_team_home": "Detroit Shock",
       "first_team_away": "Houston Comets",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200805170DET.html",
-      "last_date": "2025-06-10T00:00:00",
+      "last_date": "2026-08-29T00:00:00",
       "last_team_win": "New York Liberty",
       "last_team_lose": "Chicago Sky",
       "last_team_home": "New York Liberty",
       "last_team_away": "Chicago Sky",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202506100NYL.html"
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608290NYL.html"
     },
     {
       "pts_win": 85,
@@ -20080,19 +20080,19 @@
     {
       "pts_win": 101,
       "pts_lose": 69,
-      "count": 1,
+      "count": 2,
       "first_date": "2024-05-25T00:00:00",
       "first_team_win": "Seattle Storm",
       "first_team_lose": "Washington Mystics",
       "first_team_home": "Seattle Storm",
       "first_team_away": "Washington Mystics",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/202405250SEA.html",
-      "last_date": "2024-05-25T00:00:00",
-      "last_team_win": "Seattle Storm",
-      "last_team_lose": "Washington Mystics",
-      "last_team_home": "Seattle Storm",
-      "last_team_away": "Washington Mystics",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202405250SEA.html"
+      "last_date": "2026-08-29T00:00:00",
+      "last_team_win": "Phoenix Mercury",
+      "last_team_lose": "Toronto Tempo",
+      "last_team_home": "Phoenix Mercury",
+      "last_team_away": "Toronto Tempo",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608290PHO.html"
     },
     {
       "pts_win": 101,
@@ -24617,5 +24617,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-08-30T06:43:15.3159866Z"
+  "lastUpdated": "2026-08-30T12:56:10.5490622Z"
 }

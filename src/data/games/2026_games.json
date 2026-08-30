@@ -4408,5 +4408,35 @@
     "WinTeam": "Las Vegas Aces",
     "LoseScore": 73,
     "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-29T00:00:00",
+    "Away": "Chicago Sky",
+    "Home": "New York Liberty",
+    "AwayScore": 66,
+    "HomeScore": 85,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608290NYL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 85,
+    "WinTeam": "New York Liberty",
+    "LoseScore": 66,
+    "LoseTeam": "Chicago Sky"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-08-29T00:00:00",
+    "Away": "Toronto Tempo",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 69,
+    "HomeScore": 101,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202608290PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 101,
+    "WinTeam": "Phoenix Mercury",
+    "LoseScore": 69,
+    "LoseTeam": "Toronto Tempo"
   }
 ]
