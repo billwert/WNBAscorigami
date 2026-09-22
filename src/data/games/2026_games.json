@@ -4738,5 +4738,35 @@
     "WinTeam": "New York Liberty",
     "LoseScore": 69,
     "LoseTeam": "Toronto Tempo"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-09-21T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "New York Liberty",
+    "AwayScore": 95,
+    "HomeScore": 84,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202609210NYL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 95,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 84,
+    "LoseTeam": "New York Liberty"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-09-21T00:00:00",
+    "Away": "Dallas Wings",
+    "Home": "Phoenix Mercury",
+    "AwayScore": 86,
+    "HomeScore": 87,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202609210PHO.html",
+    "IsPlayoffGame": false,
+    "HomeWon": true,
+    "WinScore": 87,
+    "WinTeam": "Phoenix Mercury",
+    "LoseScore": 86,
+    "LoseTeam": "Dallas Wings"
   }
 ]
