@@ -4843,5 +4843,35 @@
     "WinTeam": "Washington Mystics",
     "LoseScore": 69,
     "LoseTeam": "Connecticut Sun"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-09-23T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "New York Liberty",
+    "AwayScore": 83,
+    "HomeScore": 65,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202609230NYL.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 83,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 65,
+    "LoseTeam": "New York Liberty"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-09-23T00:00:00",
+    "Away": "Dallas Wings",
+    "Home": "Seattle Storm",
+    "AwayScore": 103,
+    "HomeScore": 91,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202609230SEA.html",
+    "IsPlayoffGame": false,
+    "HomeWon": false,
+    "WinScore": 103,
+    "WinTeam": "Dallas Wings",
+    "LoseScore": 91,
+    "LoseTeam": "Seattle Storm"
   }
 ]
