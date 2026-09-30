@@ -5008,5 +5008,35 @@
     "WinTeam": "New York Liberty",
     "LoseScore": 75,
     "LoseTeam": "Minnesota Lynx"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-09-29T00:00:00",
+    "Away": "Las Vegas Aces",
+    "Home": "Indiana Fever",
+    "AwayScore": 89,
+    "HomeScore": 99,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202609290IND.html",
+    "IsPlayoffGame": true,
+    "HomeWon": true,
+    "WinScore": 99,
+    "WinTeam": "Indiana Fever",
+    "LoseScore": 89,
+    "LoseTeam": "Las Vegas Aces"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-09-29T00:00:00",
+    "Away": "Minnesota Lynx",
+    "Home": "New York Liberty",
+    "AwayScore": 71,
+    "HomeScore": 87,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202609290NYL.html",
+    "IsPlayoffGame": true,
+    "HomeWon": true,
+    "WinScore": 87,
+    "WinTeam": "New York Liberty",
+    "LoseScore": 71,
+    "LoseTeam": "Minnesota Lynx"
   }
 ]
