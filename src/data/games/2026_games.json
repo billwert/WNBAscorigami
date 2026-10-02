@@ -5068,5 +5068,20 @@
     "WinTeam": "Atlanta Dream",
     "LoseScore": 75,
     "LoseTeam": "Washington Mystics"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-10-01T00:00:00",
+    "Away": "Indiana Fever",
+    "Home": "Las Vegas Aces",
+    "AwayScore": 83,
+    "HomeScore": 94,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202610010LVA.html",
+    "IsPlayoffGame": true,
+    "HomeWon": true,
+    "WinScore": 94,
+    "WinTeam": "Las Vegas Aces",
+    "LoseScore": 83,
+    "LoseTeam": "Indiana Fever"
   }
 ]

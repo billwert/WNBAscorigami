@@ -16714,19 +16714,19 @@
     {
       "pts_win": 94,
       "pts_lose": 83,
-      "count": 5,
+      "count": 6,
       "first_date": "2008-05-31T00:00:00",
       "first_team_win": "Minnesota Lynx",
       "first_team_lose": "Phoenix Mercury",
       "first_team_home": "Minnesota Lynx",
       "first_team_away": "Phoenix Mercury",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200805310MIN.html",
-      "last_date": "2025-06-26T00:00:00",
-      "last_team_win": "Washington Mystics",
-      "last_team_lose": "Las Vegas Aces",
+      "last_date": "2026-10-01T00:00:00",
+      "last_team_win": "Las Vegas Aces",
+      "last_team_lose": "Indiana Fever",
       "last_team_home": "Las Vegas Aces",
-      "last_team_away": "Washington Mystics",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202506260LVA.html"
+      "last_team_away": "Indiana Fever",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202610010LVA.html"
     },
     {
       "pts_win": 94,
@@ -24685,5 +24685,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-10-02T05:44:06.5393194Z"
+  "lastUpdated": "2026-10-02T12:41:45.4942487Z"
 }
