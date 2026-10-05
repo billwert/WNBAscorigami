@@ -5098,5 +5098,35 @@
     "WinTeam": "Golden State Valkyries",
     "LoseScore": 73,
     "LoseTeam": "Dallas Wings"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-10-04T00:00:00",
+    "Away": "New York Liberty",
+    "Home": "Atlanta Dream",
+    "AwayScore": 82,
+    "HomeScore": 92,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202610040ATL.html",
+    "IsPlayoffGame": true,
+    "HomeWon": true,
+    "WinScore": 92,
+    "WinTeam": "Atlanta Dream",
+    "LoseScore": 82,
+    "LoseTeam": "New York Liberty"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-10-04T00:00:00",
+    "Away": "Las Vegas Aces",
+    "Home": "Golden State Valkyries",
+    "AwayScore": 60,
+    "HomeScore": 71,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202610040GSV.html",
+    "IsPlayoffGame": true,
+    "HomeWon": true,
+    "WinScore": 71,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 60,
+    "LoseTeam": "Las Vegas Aces"
   }
 ]
