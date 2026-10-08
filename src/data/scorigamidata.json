@@ -10866,19 +10866,19 @@
     {
       "pts_win": 83,
       "pts_lose": 81,
-      "count": 6,
+      "count": 7,
       "first_date": "2010-07-14T00:00:00",
       "first_team_win": "Minnesota Lynx",
       "first_team_lose": "Atlanta Dream",
       "first_team_home": "Minnesota Lynx",
       "first_team_away": "Atlanta Dream",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/201007140MIN.html",
-      "last_date": "2024-09-13T00:00:00",
-      "last_team_win": "Seattle Storm",
-      "last_team_lose": "Dallas Wings",
-      "last_team_home": "Dallas Wings",
-      "last_team_away": "Seattle Storm",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202409130DAL.html"
+      "last_date": "2026-10-07T00:00:00",
+      "last_team_win": "Golden State Valkyries",
+      "last_team_lose": "Las Vegas Aces",
+      "last_team_home": "Golden State Valkyries",
+      "last_team_away": "Las Vegas Aces",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202610070GSV.html"
     },
     {
       "pts_win": 83,
@@ -20521,6 +20521,23 @@
     },
     {
       "pts_win": 101,
+      "pts_lose": 98,
+      "count": 1,
+      "first_date": "2026-10-07T00:00:00",
+      "first_team_win": "Atlanta Dream",
+      "first_team_lose": "New York Liberty",
+      "first_team_home": "Atlanta Dream",
+      "first_team_away": "New York Liberty",
+      "first_link": "https://www.basketball-reference.com/wnba/boxscores/202610070ATL.html",
+      "last_date": "2026-10-07T00:00:00",
+      "last_team_win": "Atlanta Dream",
+      "last_team_lose": "New York Liberty",
+      "last_team_home": "Atlanta Dream",
+      "last_team_away": "New York Liberty",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202610070ATL.html"
+    },
+    {
+      "pts_win": 101,
       "pts_lose": 99,
       "count": 4,
       "first_date": "2009-09-01T00:00:00",
@@ -24685,5 +24702,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-10-08T09:02:40.4644668Z"
+  "lastUpdated": "2026-10-08T16:32:23.2273668Z"
 }
