@@ -4083,19 +4083,19 @@
     {
       "pts_win": 68,
       "pts_lose": 64,
-      "count": 12,
+      "count": 13,
       "first_date": "1998-06-21T00:00:00",
       "first_team_win": "New York Liberty",
       "first_team_lose": "Utah Starzz",
       "first_team_home": "New York Liberty",
       "first_team_away": "Utah Starzz",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/199806210NYL.html",
-      "last_date": "2025-06-24T00:00:00",
-      "last_team_win": "Washington Mystics",
-      "last_team_lose": "Minnesota Lynx",
-      "last_team_home": "Washington Mystics",
-      "last_team_away": "Minnesota Lynx",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202506240WAS.html"
+      "last_date": "2026-10-17T00:00:00",
+      "last_team_win": "Golden State Valkyries",
+      "last_team_lose": "Atlanta Dream",
+      "last_team_home": "Golden State Valkyries",
+      "last_team_away": "Atlanta Dream",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202610170GSV.html"
     },
     {
       "pts_win": 68,
@@ -24702,5 +24702,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-10-18T05:58:06.9599515Z"
+  "lastUpdated": "2026-10-18T11:12:47.608889Z"
 }

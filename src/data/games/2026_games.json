@@ -5188,5 +5188,20 @@
     "WinTeam": "Atlanta Dream",
     "LoseScore": 83,
     "LoseTeam": "New York Liberty"
+  },
+  {
+    "Year": 2026,
+    "GameDate": "2026-10-17T00:00:00",
+    "Away": "Atlanta Dream",
+    "Home": "Golden State Valkyries",
+    "AwayScore": 64,
+    "HomeScore": 68,
+    "BoxScoreURL": "https://www.basketball-reference.com/wnba/boxscores/202610170GSV.html",
+    "IsPlayoffGame": true,
+    "HomeWon": true,
+    "WinScore": 68,
+    "WinTeam": "Golden State Valkyries",
+    "LoseScore": 64,
+    "LoseTeam": "Atlanta Dream"
   }
 ]
