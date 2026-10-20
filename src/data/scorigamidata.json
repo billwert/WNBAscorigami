@@ -8571,19 +8571,19 @@
     {
       "pts_win": 79,
       "pts_lose": 65,
-      "count": 10,
+      "count": 11,
       "first_date": "1998-06-15T00:00:00",
       "first_team_win": "Houston Comets",
       "first_team_lose": "Charlotte Sting",
       "first_team_home": "Charlotte Sting",
       "first_team_away": "Houston Comets",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/199806150CHA.html",
-      "last_date": "2025-07-11T00:00:00",
-      "last_team_win": "Seattle Storm",
-      "last_team_lose": "Connecticut Sun",
-      "last_team_home": "Seattle Storm",
-      "last_team_away": "Connecticut Sun",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202507110SEA.html"
+      "last_date": "2026-10-19T00:00:00",
+      "last_team_win": "Atlanta Dream",
+      "last_team_lose": "Golden State Valkyries",
+      "last_team_home": "Golden State Valkyries",
+      "last_team_away": "Atlanta Dream",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202610190GSV.html"
     },
     {
       "pts_win": 79,
@@ -24702,5 +24702,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-10-20T06:04:43.6312004Z"
+  "lastUpdated": "2026-10-20T11:43:58.8346255Z"
 }
