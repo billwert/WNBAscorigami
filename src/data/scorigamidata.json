@@ -18176,19 +18176,19 @@
     {
       "pts_win": 97,
       "pts_lose": 71,
-      "count": 2,
+      "count": 3,
       "first_date": "2022-08-09T00:00:00",
       "first_team_win": "Connecticut Sun",
       "first_team_lose": "Los Angeles Sparks",
       "first_team_home": "Los Angeles Sparks",
       "first_team_away": "Connecticut Sun",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/202208090LAS.html",
-      "last_date": "2026-08-30T00:00:00",
-      "last_team_win": "Dallas Wings",
-      "last_team_lose": "Connecticut Sun",
-      "last_team_home": "Dallas Wings",
-      "last_team_away": "Connecticut Sun",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202608300DAL.html"
+      "last_date": "2026-10-21T00:00:00",
+      "last_team_win": "Atlanta Dream",
+      "last_team_lose": "Golden State Valkyries",
+      "last_team_home": "Atlanta Dream",
+      "last_team_away": "Golden State Valkyries",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202610210ATL.html"
     },
     {
       "pts_win": 97,
@@ -24702,5 +24702,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-10-22T10:15:35.464447Z"
+  "lastUpdated": "2026-10-22T15:21:58.5457046Z"
 }
