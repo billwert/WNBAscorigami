@@ -3709,19 +3709,19 @@
     {
       "pts_win": 67,
       "pts_lose": 62,
-      "count": 9,
+      "count": 10,
       "first_date": "2000-06-09T00:00:00",
       "first_team_win": "Seattle Storm",
       "first_team_lose": "Charlotte Sting",
       "first_team_home": "Charlotte Sting",
       "first_team_away": "Seattle Storm",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/200006090CHA.html",
-      "last_date": "2024-10-20T00:00:00",
-      "last_team_win": "New York Liberty",
-      "last_team_lose": "Minnesota Lynx",
-      "last_team_home": "New York Liberty",
-      "last_team_away": "Minnesota Lynx",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202410200NYL.html"
+      "last_date": "2026-10-24T00:00:00",
+      "last_team_win": "Golden State Valkyries",
+      "last_team_lose": "Atlanta Dream",
+      "last_team_home": "Atlanta Dream",
+      "last_team_away": "Golden State Valkyries",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202610240ATL.html"
     },
     {
       "pts_win": 67,
@@ -24702,5 +24702,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-10-25T06:13:37.990456Z"
+  "lastUpdated": "2026-10-25T11:40:48.2562184Z"
 }
