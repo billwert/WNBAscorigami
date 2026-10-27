@@ -2689,19 +2689,19 @@
     {
       "pts_win": 64,
       "pts_lose": 55,
-      "count": 10,
+      "count": 11,
       "first_date": "1999-08-09T00:00:00",
       "first_team_win": "Phoenix Mercury",
       "first_team_lose": "Minnesota Lynx",
       "first_team_home": "Phoenix Mercury",
       "first_team_away": "Minnesota Lynx",
       "first_link": "https://www.basketball-reference.com/wnba/boxscores/199908090PHO.html",
-      "last_date": "2011-07-28T00:00:00",
-      "last_team_win": "Chicago Sky",
-      "last_team_lose": "Tulsa Shock",
-      "last_team_home": "Tulsa Shock",
-      "last_team_away": "Chicago Sky",
-      "last_link": "https://www.basketball-reference.com/wnba/boxscores/201107280TUL.html"
+      "last_date": "2026-10-26T00:00:00",
+      "last_team_win": "Golden State Valkyries",
+      "last_team_lose": "Atlanta Dream",
+      "last_team_home": "Golden State Valkyries",
+      "last_team_away": "Atlanta Dream",
+      "last_link": "https://www.basketball-reference.com/wnba/boxscores/202610260GSV.html"
     },
     {
       "pts_win": 64,
@@ -24702,5 +24702,5 @@
       "last_link": "https://www.basketball-reference.com/wnba/boxscores/201007240MIN.html"
     }
   ],
-  "lastUpdated": "2026-10-27T06:20:00.4472555Z"
+  "lastUpdated": "2026-10-27T13:15:54.5502911Z"
 }
